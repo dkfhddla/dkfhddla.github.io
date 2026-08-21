@@ -1,37 +1,67 @@
-import { getRssString } from '@astrojs/rss';
+import { loadRenderers } from "astro:container";
+import { render } from "astro:content";
+import { getContainerRenderer as getMDXRenderer } from "@astrojs/mdx/container-renderer";
+import rss, { type RSSFeedItem } from "@astrojs/rss";
+import { getContainerRenderer as getSvelteRenderer } from "@astrojs/svelte/container-renderer";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import { getSortedPosts } from "@utils/content-utils";
+import { formatDateI18nWithTime } from "@utils/date-utils";
+import { url } from "@utils/url-utils";
+import type { APIContext } from "astro";
+import { experimental_AstroContainer as AstroContainer } from "astro/container";
+import sanitizeHtml from "sanitize-html";
+import { siteConfig } from "@/config";
+import pkg from "../../package.json";
 
-import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
-import { fetchPosts } from '~/utils/blog';
-import { getPermalink } from '~/utils/permalinks';
+function stripInvalidXmlChars(str: string): string {
+	return str.replace(
+		// biome-ignore lint/suspicious/noControlCharactersInRegex: https://www.w3.org/TR/xml/#charsets
+		/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F\uFDD0-\uFDEF\uFFFE\uFFFF]/g,
+		"",
+	);
+}
 
-export const GET = async () => {
-  if (!APP_BLOG.isEnabled) {
-    return new Response(null, {
-      status: 404,
-      statusText: 'Not found',
-    });
-  }
-
-  const posts = await fetchPosts();
-
-  const rss = await getRssString({
-    title: `${SITE.name} — 글`,
-    description: METADATA?.description || '',
-    site: import.meta.env.SITE,
-
-    items: posts.map((post) => ({
-      link: getPermalink(post.permalink, 'post'),
-      title: post.title,
-      description: post.excerpt,
-      pubDate: post.publishDate,
-    })),
-
-    trailingSlash: SITE.trailingSlash,
-  });
-
-  return new Response(rss, {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
-  });
-};
+export async function GET(context: APIContext): Promise<Response> {
+	const blog = await getSortedPosts();
+	const renderers = await loadRenderers([
+		getMDXRenderer(),
+		getSvelteRenderer(),
+	]);
+	const container = await AstroContainer.create({ renderers });
+	const feedItems: RSSFeedItem[] = [];
+	for (const post of blog) {
+		if (post.data.password) {
+			feedItems.push({
+				title: post.data.title,
+				pubDate: post.data.published,
+				description: post.data.description || "",
+				link: url(`/posts/${post.id}/`),
+				content: i18n(I18nKey.passwordProtectedRss),
+			});
+			continue;
+		}
+		const { Content } = await render(post);
+		const rawContent = await container.renderToString(Content);
+		const cleanedContent = stripInvalidXmlChars(rawContent);
+		feedItems.push({
+			title: post.data.title,
+			pubDate: post.data.published,
+			description: post.data.description || "",
+			link: url(`/posts/${post.id}/`),
+			content: sanitizeHtml(cleanedContent, {
+				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+			}),
+		});
+	}
+	return rss({
+		title: siteConfig.title,
+		description: siteConfig.subtitle || "No description",
+		site: context.site ?? "https://firefly.cuteleaf.cn",
+		customData: `<templateTheme>Firefly</templateTheme>
+		<templateThemeVersion>${pkg.version}</templateThemeVersion>
+		<templateThemeUrl>https://github.com/CuteLeaf/Firefly</templateThemeUrl>
+		<lastBuildDate>${formatDateI18nWithTime(new Date())}</lastBuildDate>`,
+		items: feedItems,
+	});
+}

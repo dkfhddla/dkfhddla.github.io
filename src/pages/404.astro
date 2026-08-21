@@ -1,22 +1,74 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
-
-const title = `페이지를 찾을 수 없습니다`;
+import { Icon } from "astro-icon/components";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { url } from "@/utils/url-utils";
 ---
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="font-heading text-3xl font-semibold md:text-3xl">이 주소에는 페이지가 없습니다.</p>
-        <p class="mt-4 mb-8 text-lg text-muted">주소를 확인하거나 첫 화면에서 다시 시작해 주세요.</p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn">첫 화면으로</a>
-      </div>
+<MainGridLayout title={i18n(I18nKey.notFound)} description={i18n(I18nKey.notFoundDescription)}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-96">
+        <div class="card-base z-10 px-9 py-12 relative w-full flex flex-col items-center justify-center text-center">
+            <!-- 404 大号数字 -->
+            <div class="text-8xl md:text-9xl font-bold text-(--primary) opacity-20 mb-4">
+                {i18n(I18nKey.notFound)}
+            </div>
+
+            <!-- 404 图标 -->
+            <div class="mb-6">
+                <Icon is:inline name="material-symbols:error-outline" class="text-6xl text-(--primary)" />
+            </div>
+
+            <!-- 标题 -->
+            <div class="text-3xl md:text-4xl font-bold mb-4 text-90">
+                {i18n(I18nKey.notFoundTitle)}
+            </div>
+
+            <!-- 描述 -->
+            <p class="text-lg text-75 mb-8 max-w-md">
+                {i18n(I18nKey.notFoundDescription)}
+            </p>
+
+            <!-- 返回首页按钮 -->
+            <a
+                href={url("/")}
+                class="inline-flex items-center gap-2 px-6 py-3 bg-(--primary) text-white rounded-(--radius-large) hover:bg-(--btn-content) transition-colors duration-200 font-medium"
+            >
+                <Icon is:inline name="material-symbols:home" class="text-xl" />
+                {i18n(I18nKey.backToHome)}
+            </a>
+
+            <!-- 装饰性元素 -->
+            <div class="absolute top-4 left-4 opacity-10">
+                <Icon is:inline name="material-symbols:sentiment-sad" class="text-4xl text-(--primary)" />
+            </div>
+            <div class="absolute bottom-4 right-4 opacity-10">
+                <Icon is:inline name="material-symbols:search-off" class="text-4xl text-(--primary)" />
+            </div>
+        </div>
     </div>
-  </section>
-</Layout>
+</MainGridLayout>
+
+<style>
+    /* 添加一些动画效果 */
+    .card-base {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* 按钮悬停效果 */
+    a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+    }
+</style>

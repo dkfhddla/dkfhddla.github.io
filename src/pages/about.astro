@@ -1,93 +1,25 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = {
-  title: '소개',
-  description: '제품과 실시간 3D 도구를 만드는 개발자 Jacob을 소개합니다.',
-};
+import { getEntry, render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+
+const aboutPost = await getEntry("spec", "about");
+
+if (!aboutPost) {
+	throw new Error("About page content not found");
+}
+
+const { Content } = await render(aboutPost);
 ---
-
-<Layout metadata={metadata}>
-  <Hero
-    tagline="About"
-    image={{ src: '~/assets/images/hero-image.png', alt: '다채로운 3D 형상' }}
-    actions={[
-      {
-        variant: 'primary',
-        text: 'GitHub 보기',
-        href: 'https://github.com/dkfhddla',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        icon: 'tabler:brand-github',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      복잡한 도구를<br />
-      <span class="text-accent dark:text-white">분명한 경험으로</span>
-    </Fragment>
-    <Fragment slot="subtitle">
-      안녕하세요, Jacob입니다. 실시간 3D 도구와 제품을 만들며 기술적으로 가능한 것과 사용자가 예측할 수 있는 것 사이의
-      간격을 줄이는 일에 관심이 많습니다.
-    </Fragment>
-  </Hero>
-
-  <Steps2
-    title="일하는 기준"
-    subtitle="작업의 크기와 관계없이 문제를 확인하고, 책임을 나누고, 검증 결과를 남기는 흐름을 지킵니다."
-    items={[
-      {
-        title: '현상부터 본다',
-        description: '에러 문구보다 사용자가 실제로 마주친 상태를 먼저 확인합니다.',
-        icon: 'tabler:eye',
-      },
-      {
-        title: '경계를 정한다',
-        description: '이번 변화가 책임지는 것과 책임지지 않는 것을 분명히 나눕니다.',
-        icon: 'tabler:box-model-2',
-      },
-      {
-        title: '증거로 끝낸다',
-        description: '구현 완료가 아니라 다시 확인할 수 있는 검증 결과까지 남깁니다.',
-        icon: 'tabler:circle-check',
-      },
-    ]}
-  />
-
-  <Features2
-    title="지금의 관심사"
-    tagline="Focus"
-    columns={3}
-    items={[
-      {
-        title: 'Editor interactions',
-        description: '편집기에서 사용자가 직접 만지는 상호작용과 피드백을 설계합니다.',
-        icon: 'tabler:hand-click',
-      },
-      {
-        title: 'System boundaries',
-        description: '실시간 상태와 저장 데이터, 서로 다른 시스템의 책임을 나눕니다.',
-        icon: 'tabler:arrows-split',
-      },
-      {
-        title: 'AI collaboration',
-        description: 'AI와 함께 탐색하고 구현하고 검증하는 반복 가능한 방식을 실험합니다.',
-        icon: 'tabler:sparkles',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <CallToAction
-    title="개발 기록을 읽어보세요"
-    subtitle="성공한 구현뿐 아니라 잘못 짚은 원인과 확인하지 못한 부분도 함께 남깁니다."
-    actions={[{ variant: 'primary', text: '글 보러 가기', href: '/blog', icon: 'tabler:arrow-right' }]}
-  />
-</Layout>
+<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
+    <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full ">
+            <Markdown class="mt-2">
+                <Content />
+            </Markdown>
+        </div>
+    </div>
+</MainGridLayout>
