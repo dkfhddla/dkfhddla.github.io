@@ -1,6 +1,6 @@
 ---
 title: 나는 Codex 발사대가 된 걸까
-published: 2026-08-29 01:02:09
+published: "2026-08-29T01:02:09+09:00"
 description: Unreal Engine 기반 시스템을 6개월 만에 다시 만들며 Agentic Development와 개발자의 역할을 생각해 본 기록.
 image: /assets/images/jacob-banner.jpg
 tags: [Agentic Development, Codex, Rust, Bevy, 개발, AI대필]

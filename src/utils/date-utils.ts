@@ -1,7 +1,20 @@
 import { siteConfig } from "../config";
 
 export function formatDateToYYYYMMDD(date: Date): string {
-	return date.toISOString().substring(0, 10);
+	return formatDateTimeToYYYYMMDDHHmm(date).substring(0, 10);
+}
+
+export function formatPostDate(date: Date, includeTime = false): string {
+	return includeTime
+		? formatDateTimeToYYYYMMDDHHmm(date)
+		: formatDateToYYYYMMDD(date);
+}
+
+export function formatPostDateForMetadata(
+	date: Date,
+	includeTime = false,
+): string {
+	return includeTime ? date.toISOString() : formatDateToYYYYMMDD(date);
 }
 
 // 国际化日期格式化函数

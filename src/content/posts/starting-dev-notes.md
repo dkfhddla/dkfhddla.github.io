@@ -1,6 +1,6 @@
 ---
 title: 내가 만든 것과 배운 것을 쌓는 곳
-published: 2026-08-21
+published: "2026-08-21"
 description: 내가 작업한 내용과 프로젝트의 이력, 그 과정에서 바뀐 생각을 잊지 않고 쌓기 위해 이 블로그를 시작합니다.
 image: /assets/images/jacob-banner.jpg
 tags: [블로그, 작업 기록, 생각]

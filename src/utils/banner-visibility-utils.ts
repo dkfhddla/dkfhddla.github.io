@@ -8,6 +8,8 @@ export interface BannerPostMeta {
 	description?: string;
 	published: Date;
 	updated?: Date;
+	publishedIncludesTime?: boolean;
+	updatedIncludesTime?: boolean;
 	words?: number;
 	minutes?: number;
 }
