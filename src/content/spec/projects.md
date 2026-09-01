@@ -31,6 +31,10 @@ UI의 Base·Component·View 책임을 구분한 가이드를 작성하고, Undo/
 
 웹 UI와 Rust 런타임을 연결해 3D 장면과 Shot을 편집하는 제작 도구입니다. 사용자 입력부터 엔진 평가, 저장과 Export까지 이어지는 기능을 하나의 흐름으로 구현했습니다.
 
+CinevStudio에서 약 4년 반 동안 축적한 기획을 바탕으로, Shotloom을 6개월 동안 새로운 React·TypeScript와 Rust 구조로 개발했습니다. 기존 코드를 옮긴 것이 아니라 핵심 제작 흐름을 새 아키텍처에 맞게 재설계했습니다.
+
+개발 전반에는 AI 에이전틱 방식을 적용했습니다. 축적된 기획을 구현 기준으로 삼아 기능 개발과 검증을 반복하고, 최종 동작은 테스트와 실제 편집 흐름으로 확인했습니다.
+
 React 입력 훅과 브리지 계약, Rust 엔진을 연결해 viewport camera navigation을 개발했습니다. Timeline transport·playhead, Animation import·Performance Clip, Camera Clip과 장면 자산 배치 기능도 연결했습니다.
 
 수동 Pose의 소유권을 Performance Clip으로 옮기고, IK transaction과 손·발 4-limb, pole·rotation, gizmo interaction을 단계적으로 구현했습니다.
