@@ -34,9 +34,21 @@ export const navBarConfig: NavBarConfig = {
 			],
 		},
 		{
-			name: "소개",
-			url: "/about/",
-			icon: "material-symbols:person",
+			name: "포트폴리오",
+			url: "#",
+			icon: "material-symbols:folder-open",
+			children: [
+				{
+					name: "프로젝트",
+					url: "/projects/",
+					icon: "material-symbols:deployed-code",
+				},
+				{
+					name: "경력",
+					url: "/career/",
+					icon: "material-symbols:work",
+				},
+			],
 		},
 		{
 			name: "친구",
