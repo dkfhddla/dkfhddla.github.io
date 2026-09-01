@@ -57,11 +57,11 @@ Camera Clip 생성·편집, 카메라 조작과 preset·preview 흐름도 구성
 
 ## AI 에이전틱 개발로 전환한 Shotloom
 
-CinevStudio에서 약 4년 반 동안 축적한 기획과 제작 도구 경험을 바탕으로, Shotloom을 6개월 동안 새롭게 개발했습니다.
+CinevStudio에서 4년 6개월 동안 축적한 기획과 제작 경험을 바탕으로, Codex·React·Rust·Bevy Engine을 활용해 Shotloom의 핵심 제작 도구를 6개월 동안 새롭게 개발했습니다.
 
-기존 코드를 옮긴 것이 아니라, 축적된 기획을 React·TypeScript 웹 UI와 Rust 런타임에 맞게 다시 설계했습니다. Timeline·Shot·Camera·Animation 등 핵심 편집 경험을 AI 에이전틱 개발 방식으로 구현하고 검증했습니다.
+기존 코드를 옮긴 것이 아니라 필요한 기능과 구조를 다시 정의했습니다. AI 에이전트가 작성한 결과를 직접 테스트하고, 중복된 책임과 모듈 경계를 검토하며 구조를 지속적으로 개선했습니다.
 
-React 기반 웹 UI와 Rust 런타임을 연결해 장면, Timeline, Animation, Camera와 Pose를 편집하는 도구를 구성했습니다.
+React 기반 웹 UI와 Rust·Bevy 런타임을 연결해 장면, Timeline, Animation, Camera와 Pose를 편집하는 도구를 구성했습니다.
 
 React 입력과 Rust 엔진 카메라 사이의 브리지를 구현하고, Timeline transport·playhead와 엔진 평가를 동기화했습니다. Animation import부터 Performance Clip 생성과 재생까지 이어지는 흐름도 연결했습니다.
 
@@ -70,6 +70,8 @@ Camera Clip 생성과 장면 자산 배치 기능을 구현했으며, 손·발 I
 Pose 상태가 다른 영역에 흩어지지 않도록 Clip이 소유하는 데이터로 전환했습니다. 이후 reload·Undo·preview·이미지 export에서도 같은 결과가 유지되는지 검증했습니다.
 
 UI, 브리지, 코어, 엔진, 저장과 CLI를 함께 변경해야 하는 기능은 한 번에 구현하지 않았습니다. 소유권 전환, transaction, limb solve, viewport interaction과 export 검증 순서로 나누어 진행했습니다.
+
+관련 글: [나는 Codex 발사대가 된 걸까](/posts/am-i-a-codex-launcher/)
 
 ## 3D 자산 Catalog·전달 시스템
 
@@ -111,7 +113,7 @@ UI와 엔진도 분리된 기능으로만 보지 않습니다. 사용자 입력�
 - **3D Editing:** Sequence, Timeline, Track, Clip, Shot, Camera, IK
 - **Backend·Data:** Node.js, AWS, JSON Schema, XML
 - **Infrastructure:** GitHub Actions, CI, Docker
-- **AI-assisted Development:** AI 에이전틱 개발, 요구사항 기반 구현·검증
+- **AI-assisted Development:** Codex, AI 에이전틱 개발, 구조 설계·구현 검증
 - **VR:** VIVE, AWS Sumerian
 
 ## 경력 요약
