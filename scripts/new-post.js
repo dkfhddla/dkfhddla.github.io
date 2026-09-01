@@ -4,13 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { pinyin } from "pinyin-pro";
 
-function getDate() {
-	const today = new Date();
-	const year = today.getFullYear();
-	const month = String(today.getMonth() + 1).padStart(2, "0");
-	const day = String(today.getDate()).padStart(2, "0");
-
-	return `${year}-${month}-${day}`;
+function getPublishedAt() {
+	return new Date().toISOString();
 }
 
 const args = process.argv.slice(2);
@@ -81,7 +76,7 @@ if (!fs.existsSync(dirPath)) {
 
 const content = `---
 title: ${args[0]}
-published: ${getDate()}
+published: "${getPublishedAt()}"
 description: ''
 image: ''
 tags: []

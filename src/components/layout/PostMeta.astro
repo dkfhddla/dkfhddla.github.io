@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import { commentConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
-import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { formatPostDate } from "@/utils/date-utils";
 import { getCategoryUrl, getTagUrl } from "@/utils/url-utils";
 
 export interface Props {
@@ -28,6 +28,8 @@ export interface Props {
 	minutes?: number;
 	showWords?: boolean;
 	showReadingTime?: boolean;
+	publishedIncludesTime?: boolean;
+	updatedIncludesTime?: boolean;
 	variant?: "default" | "cover";
 }
 
@@ -52,6 +54,8 @@ const {
 	minutes,
 	showWords = false,
 	showReadingTime = false,
+	publishedIncludesTime = false,
+	updatedIncludesTime = false,
 	password,
 	variant = "default",
 } = Astro.props;
@@ -91,7 +95,7 @@ const visibleTags =
           />
         </div>
         <span class="text-50 text-sm font-medium">
-          {formatDateToYYYYMMDD(published)}
+          {formatPostDate(published, publishedIncludesTime)}
         </span>
       </div>
     )
@@ -111,7 +115,7 @@ const visibleTags =
             />
           </div>
           <span class="text-50 text-sm font-medium">
-            {formatDateToYYYYMMDD(updated)}
+            {formatPostDate(updated, updatedIncludesTime)}
           </span>
         </div>
       )

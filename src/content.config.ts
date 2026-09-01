@@ -7,6 +7,8 @@ type PostData = {
 	title: string;
 	published: Date;
 	updated?: Date;
+	publishedIncludesTime: boolean;
+	updatedIncludesTime: boolean;
 	draft: boolean;
 	description: string;
 	image: string;
@@ -38,33 +40,60 @@ type ContentCollection<T> = CollectionConfig<
 	ReturnType<typeof glob>
 >;
 
+type PostDateInput = string;
+
+const postDateSchema = z.union([
+	z.iso.date(),
+	z.iso.datetime({ offset: true }),
+]);
+
+function normalizePostDate(value: PostDateInput): Date {
+	return new Date(value);
+}
+
+function postDateIncludesTime(value: PostDateInput): boolean {
+	return value.includes("T");
+}
+
 const postsCollection: ContentCollection<PostData> = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
-	schema: z.object({
-		title: z.string(),
-		published: z.date(),
-		updated: z.date().optional(),
-		draft: z.boolean().optional().default(false),
-		description: z.string().optional().default(""),
-		image: z.string().optional().default(""),
-		tags: z.array(z.string()).optional().default([]),
-		category: z.string().optional().nullable().default(""),
-		lang: z.string().optional().default(""),
-		pinned: z.boolean().optional().default(false),
-		author: z.string().optional().default(""),
-		sourceLink: z.string().optional().default(""),
-		licenseName: z.string().optional().default(""),
-		licenseUrl: z.string().optional().default(""),
-		comment: z.boolean().optional().default(true),
-		password: z.string().optional().default(""),
-		passwordHint: z.string().optional().default(""),
+	schema: z
+		.object({
+			title: z.string(),
+			published: postDateSchema,
+			updated: postDateSchema.optional(),
+			draft: z.boolean().optional().default(false),
+			description: z.string().optional().default(""),
+			image: z.string().optional().default(""),
+			tags: z.array(z.string()).optional().default([]),
+			category: z.string().optional().nullable().default(""),
+			lang: z.string().optional().default(""),
+			pinned: z.boolean().optional().default(false),
+			author: z.string().optional().default(""),
+			sourceLink: z.string().optional().default(""),
+			licenseName: z.string().optional().default(""),
+			licenseUrl: z.string().optional().default(""),
+			comment: z.boolean().optional().default(true),
+			password: z.string().optional().default(""),
+			passwordHint: z.string().optional().default(""),
 
-		/* For internal use */
-		prevTitle: z.string().default(""),
-		prevSlug: z.string().default(""),
-		nextTitle: z.string().default(""),
-		nextSlug: z.string().default(""),
-	}),
+			/* For internal use */
+			prevTitle: z.string().default(""),
+			prevSlug: z.string().default(""),
+			nextTitle: z.string().default(""),
+			nextSlug: z.string().default(""),
+		})
+		.transform(
+			(data): PostData => ({
+				...data,
+				published: normalizePostDate(data.published),
+				updated: data.updated ? normalizePostDate(data.updated) : undefined,
+				publishedIncludesTime: postDateIncludesTime(data.published),
+				updatedIncludesTime: data.updated
+					? postDateIncludesTime(data.updated)
+					: false,
+			}),
+		),
 });
 
 const specCollection: ContentCollection<Record<string, never>> =

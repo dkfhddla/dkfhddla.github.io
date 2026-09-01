@@ -26,7 +26,10 @@ import { licenseConfig } from "@/config/licenseConfig";
 import { profileConfig } from "@/config/profileConfig";
 import { siteConfig } from "@/config/siteConfig";
 import { sponsorConfig } from "@/config/sponsorConfig";
-import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import {
+	formatDateToYYYYMMDD,
+	formatPostDateForMetadata,
+} from "@/utils/date-utils";
 import { getApiUrlList, processCoverImageSync } from "@/utils/image-utils";
 import { url } from "@/utils/url-utils";
 
@@ -52,6 +55,8 @@ const bannerPostMeta = {
 	description: entry.data.description,
 	published: entry.data.published,
 	updated: entry.data.updated,
+	publishedIncludesTime: entry.data.publishedIncludesTime,
+	updatedIncludesTime: entry.data.updatedIncludesTime,
 	words: remarkPluginFrontmatter.words,
 	minutes: remarkPluginFrontmatter.minutes,
 };
@@ -97,7 +102,16 @@ const jsonLd = {
 		name: profileConfig.name,
 		url: Astro.site,
 	},
-	datePublished: formatDateToYYYYMMDD(entry.data.published),
+	datePublished: formatPostDateForMetadata(
+		entry.data.published,
+		entry.data.publishedIncludesTime,
+	),
+	dateModified: formatPostDateForMetadata(
+		entry.data.updated || entry.data.published,
+		entry.data.updated
+			? entry.data.updatedIncludesTime
+			: entry.data.publishedIncludesTime,
+	),
 	inLanguage: entry.data.lang
 		? entry.data.lang.replace("_", "-")
 		: siteConfig.lang.replace("_", "-"),
@@ -184,6 +198,8 @@ const relatedPosts = await getRelatedPosts(entry, 5);
                 className="gap-x-4 gap-y-1"
                 published={entry.data.published}
                 updated={entry.data.updated}
+                publishedIncludesTime={entry.data.publishedIncludesTime}
+                updatedIncludesTime={entry.data.updatedIncludesTime}
                 category={entry.data.category || undefined}
                 tags={entry.data.tags}
                 id={entry.id}
@@ -272,6 +288,8 @@ const relatedPosts = await getRelatedPosts(entry, 5);
               className="mb-5"
               published={entry.data.published}
               updated={entry.data.updated}
+              publishedIncludesTime={entry.data.publishedIncludesTime}
+              updatedIncludesTime={entry.data.updatedIncludesTime}
               tags={entry.data.tags}
               category={entry.data.category || undefined}
               id={entry.id}
