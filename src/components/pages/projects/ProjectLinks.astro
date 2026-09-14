@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectData } from "@/types/project";
+
+interface Props {
+	links: ProjectData["link"];
+}
+const { links } = Astro.props;
+function iconFor(value: string): string {
+	const host = new URL(value).hostname;
+	if (host === "github.com") return "fa7-brands:github";
+	if (host === "youtu.be" || host === "youtube.com" || host.endsWith(".youtube.com"))
+		return "fa7-brands:youtube";
+	return "material-symbols:open-in-new";
+}
+---
+
+{links.map(item => (
+	<a class="project-link project-external-button" href={item.value} target="_blank" rel="noopener noreferrer">
+		<Icon name={iconFor(item.value)} />
+		<span>{item.label}</span><span class="sr-only"> (새 탭)</span>
+	</a>
+))}

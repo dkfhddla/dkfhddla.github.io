@@ -1,0 +1,48 @@
+---
+import { getImage } from "astro:assets";
+import path from "node:path";
+import type { ImageMetadata } from "astro";
+import sharp from "sharp";
+import CoverImage from "@/components/common/CoverImage.astro";
+import { url } from "@/utils/url-utils";
+
+interface Props {
+	src: string;
+	basePath: string;
+	title: string;
+}
+
+const { src, basePath, title } = Astro.props;
+let fullSrc = src;
+let aspectRatio: string | undefined;
+
+if (src.startsWith("/") && !src.startsWith("//")) {
+	fullSrc = url(src);
+	const { width, height } = await sharp(path.join("public", src)).metadata();
+	if (width && height) aspectRatio = `${width} / ${height}`;
+} else if (!/^(https?:|data:|\/\/)/.test(src)) {
+	const images = import.meta.glob<ImageMetadata>(
+		"../../../**/*.{png,jpg,jpeg,webp,avif}",
+		{ import: "default" },
+	);
+	const key = path.join("../../../", basePath, src).replace(/\\/g, "/");
+	const load = images[key];
+	if (!load) throw new Error(`Project cover not found: ${key}`);
+	const image = await load();
+	fullSrc = (await getImage({ src: image, width: image.width })).src;
+	aspectRatio = `${image.width} / ${image.height}`;
+}
+---
+
+<a
+	class="project-detail-cover"
+	href={fullSrc}
+	data-no-swup
+	data-fancybox="project-cover"
+	data-type="image"
+	aria-label={`${title} 표지 확대 보기`}
+	style={aspectRatio ? `aspect-ratio: ${aspectRatio}` : undefined}
+>
+	<CoverImage src={src} basePath={basePath} alt={title} loading="eager" />
+	<span class="project-cover-hint" aria-hidden="true">확대 보기 ↗</span>
+</a>
