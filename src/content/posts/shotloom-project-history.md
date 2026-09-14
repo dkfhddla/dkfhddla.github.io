@@ -1,6 +1,6 @@
 ---
 title: Shotloom은 어떻게 하나의 편집기에서 제작 파이프라인으로 발전했나
-published: 2026-08-22
+published: "2026-08-22"
 description: Shot 중심 편집기로 시작한 Shotloom이 저장 가능한 작업물, 생성 파이프라인, 서비스 경계, clip-local pose와 카메라 저작 도구로 발전한 과정을 정리합니다.
 tags: [Shotloom, 프로젝트 이력, 개발 회고, ai대필]
 category: 프로젝트

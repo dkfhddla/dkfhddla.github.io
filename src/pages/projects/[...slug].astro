@@ -1,0 +1,44 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import ProjectCover from "@/components/pages/projects/ProjectCover.astro";
+import ProjectLinks from "@/components/pages/projects/ProjectLinks.astro";
+import ProjectStatus from "@/components/pages/projects/ProjectStatus.astro";
+import Markdown from "@/components/common/Markdown.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { getSortedProjects } from "@/utils/projects-utils";
+import { getFileDirFromPath, url } from "@/utils/url-utils";
+import "@/styles/projects.css";
+
+export async function getStaticPaths() {
+	return (await getSortedProjects()).map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+interface Props {
+	entry: CollectionEntry<"projects">;
+}
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const { title, description, category, period, image, detailImage, tags, status, link } =
+	entry.data;
+const cover = detailImage || image;
+---
+
+<MainGridLayout title={title} description={description} headings={headings}>
+	<article class="card-base project-detail">
+		<a class="project-link project-back" href={url("/projects/")}><span aria-hidden="true">←</span> 프로젝트 목록</a>
+		<header class="project-detail-header">
+			<p class="project-eyebrow">{category}</p>
+			<h1 data-pagefind-meta="title">{title}</h1>
+			{period && <p class="project-period">참여 기간 · {period}</p>}
+			<ProjectStatus status={status} />
+			<p class="project-intro">{description}</p>
+			{tags.length > 0 && <ul class="project-tags" aria-label="기술 및 주제">{tags.map(tag => <li>{tag}</li>)}</ul>}
+			{link.length > 0 && <div class="project-external-links"><ProjectLinks links={link} /></div>}
+			{cover && <ProjectCover src={cover} basePath={getFileDirFromPath(entry.filePath || "")} title={title} />}
+		</header>
+		<Markdown class="project-body"><Content /></Markdown>
+		<footer class="project-detail-footer"><a class="project-link" href={url("/projects/")}>모든 프로젝트 보기 →</a><a class="project-link" href={url("/career/")}>경력 보기 →</a></footer>
+	</article>
+</MainGridLayout>
