@@ -6,7 +6,7 @@ engagement: "company"
 organization: "시나몬"
 period: "2023.07 ~ 2026.05"
 order: 110
-image: ""
+image: "/assets/projects/cinevstudio/brand-cover.webp"
 tags: ["Unreal Engine","C++","Timeline","UMG"]
 ---
 
