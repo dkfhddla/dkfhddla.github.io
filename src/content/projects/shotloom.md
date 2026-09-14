@@ -19,6 +19,26 @@ Shotloom은 하나의 촬영 단위인 **Shot**을 중심으로 캐릭터와 소
 
 생성된 초안을 사람이 원하는 구도와 동작으로 다듬고, 다시 영상 생성과 다음 장면 제작에 활용하는 흐름을 제공합니다. 아래는 제품의 제작 흐름이며, 제가 직접 맡은 개발 범위는 뒤에서 구분해 소개합니다.
 
+## 프로젝트 영상
+
+### SceneGen 생성 결과
+
+3D 장면의 구도를 편집한 뒤 SceneGen으로 생성한 결과입니다. 아래 영상에서 주변 공간이 보이는 구도와 인물의 움직임을 확인할 수 있습니다. (약 5초)
+
+<video controls playsinline preload="none" width="864" height="496" aria-label="SceneGen 생성 결과 영상" style="display: block; width: 100%; height: auto; aspect-ratio: 864 / 496; border-radius: 0.75rem; background: #111;">
+  <source src="/assets/projects/shotloom/scenegen-video.mp4" type="video/mp4" />
+  <a href="/assets/projects/shotloom/scenegen-video.mp4">SceneGen 생성 결과 영상 열기</a>
+</video>
+
+### 포즈·동작·카메라 편집 시연
+
+캐릭터의 포즈와 동작, 카메라 구도를 편집하고 SceneGen 영상 생성으로 이어가는 과정을 담은 시연입니다. (15초)
+
+<video controls playsinline preload="none" width="1280" height="720" poster="/assets/projects/shotloom/scene-editor.webp" aria-label="Shotloom 포즈·동작·카메라 편집 시연 영상" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 0.75rem; background: #111;">
+  <source src="/assets/projects/shotloom/editing-demo.mp4" type="video/mp4" />
+  <a href="/assets/projects/shotloom/editing-demo.mp4">Shotloom 편집 시연 영상 열기</a>
+</video>
+
 ## 스토리보드에서 3D 연출로
 
 ![장면 구성의 출발점이 되는 원본 스토리보드 샷](/assets/projects/shotloom/storyboard.webp)
