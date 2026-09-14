@@ -1,11 +1,11 @@
 ---
 title: "Shotloom"
-description: "웹 UI와 Rust 런타임을 연결해 3D 장면과 Shot을 편집하는 제작 도구입니다. 사용자 입력부터 엔진 평가, 저장과 Export까지 이어지는 기능을 하나의 흐름으로 구현했습니다."
+description: "Codex를 활용해 개발한 3D 장면·Shot 제작 도구입니다. React와 Rust·Bevy를 연결하고, AI가 작성한 코드의 동작 검증과 모듈 구조 개선을 직접 수행했습니다."
 category: "3D 콘텐츠 제작 도구"
 period: "2026.04 ~ 2026.08"
 order: 100
 image: ""
-tags: ["React","TypeScript","Rust","IK"]
+tags: ["Codex","AI 에이전틱 개발","React","TypeScript","Rust","Bevy","IK"]
 ---
 
 **기간:** 2026.04 ~ 2026.08\
