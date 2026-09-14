@@ -2,6 +2,7 @@ import { defineCollection } from "astro:content";
 import type { CollectionConfig } from "astro/content/config";
 import { glob } from "astro/loaders";
 import { type ZodType, z } from "astro/zod";
+import type { ProjectData } from "@/types/project";
 
 type PostData = {
 	title: string;
@@ -111,12 +112,45 @@ const dynamicCollection: ContentCollection<DynamicData> = defineCollection({
 	}),
 });
 
+const projectsCollection: ContentCollection<ProjectData> = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string().default(""),
+		category: z.string().default(""),
+		period: z.string().default(""),
+		published: z.coerce.date().optional(),
+		order: z.number().default(0),
+		draft: z.boolean().default(false),
+		image: z.string().default(""),
+		tags: z.array(z.string()).default([]),
+		status: z
+			.enum(["unspecified", "planning", "developing", "published", "archived"])
+			.default("unspecified"),
+		link: z
+			.array(
+				z.object({
+					label: z.string(),
+					value: z
+						.url()
+						.refine(
+							(value) => /^https?:\/\//i.test(value),
+							"Use an HTTP or HTTPS URL",
+						),
+				}),
+			)
+			.default([]),
+	}),
+});
+
 export const collections: {
 	dynamic: typeof dynamicCollection;
 	posts: typeof postsCollection;
+	projects: typeof projectsCollection;
 	spec: typeof specCollection;
 } = {
 	dynamic: dynamicCollection,
 	posts: postsCollection,
+	projects: projectsCollection,
 	spec: specCollection,
 };

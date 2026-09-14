@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import CoverImage from "@/components/common/CoverImage.astro";
+import { projectStatusLabels } from "@/utils/projects-utils";
+import { getFileDirFromPath, url } from "@/utils/url-utils";
+
+interface Props {
+	project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const { title, description, category, period, image, tags, status, link } =
+	project.data;
+const detailUrl = url(`/projects/${project.id}/`);
+---
+
+<article class="project-card card-base" data-project-card data-status={status}
+	data-category={category} data-search={[title, description, ...tags].join(" ").normalize("NFKC").toLocaleLowerCase("ko-KR")}>
+	<a class="project-cover" href={detailUrl} aria-label={`${title} 상세 보기`}>
+		{image ? (
+			<CoverImage src={image} basePath={getFileDirFromPath(project.filePath || "")} alt={title} class="w-full h-full" preview />
+		) : (
+			<div class="project-cover-placeholder" aria-hidden="true">
+				<Icon name="material-symbols:deployed-code" />
+				<span>{category}</span>
+			</div>
+		)}
+	</a>
+	<div class="project-card-body">
+		<p class="project-eyebrow">{category}</p>
+		<h2><a href={detailUrl}>{title}</a></h2>
+		{period && <p class="project-period">{period}</p>}
+		{status !== "unspecified" && <span class="project-status">{projectStatusLabels[status]}</span>}
+		<p class="project-description">{description}</p>
+		{tags.length > 0 && <ul class="project-tags" aria-label="기술 및 주제">{tags.map(tag => <li>{tag}</li>)}</ul>}
+		<div class="project-card-actions">
+			{link.map(item => <a class="project-link" href={item.value} target="_blank" rel="noopener noreferrer">{item.label}<span class="sr-only"> (새 탭)</span></a>)}
+			<a class="project-details-link" href={detailUrl} aria-label={`${title} 상세 보기`}>상세 보기 <span aria-hidden="true">→</span></a>
+		</div>
+	</div>
+</article>
