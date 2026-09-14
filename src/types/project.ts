@@ -7,6 +7,7 @@ export type ProjectData = {
 	order: number;
 	draft: boolean;
 	image: string;
+	detailImage?: string;
 	tags: string[];
 	status: "unspecified" | "planning" | "developing" | "published" | "archived";
 	link: { label: string; value: string }[];

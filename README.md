@@ -36,6 +36,7 @@ category: "3D 콘텐츠 제작 도구"
 period: "2026.04 ~ 2026.08"
 order: 100
 image: "/assets/projects/example/cover.webp"
+detailImage: "/assets/projects/example/editor.webp"
 tags: ["React", "Rust"]
 status: "developing"
 draft: false
@@ -48,6 +49,8 @@ link:
 파일 이름이 주소가 됩니다. 예를 들어 `shotloom.md`는 `/projects/shotloom/`입니다.
 `order`가 클수록 먼저 표시되고, 같으면 선택 필드 `published`의 최신 날짜순으로 정렬됩니다.
 `image`에는 공개 경로, HTTP(S) URL 또는 문서 기준 상대 경로를 사용할 수 있습니다.
+상세 첫 이미지에 실제 작업 화면을 쓰려면 선택 필드 `detailImage`를 지정합니다.
+목록은 `image`를 유지하고, 상세는 `detailImage`가 없으면 `image`를 사용합니다.
 이미지를 생략하면 테마 색상의 기본 표지가 표시됩니다.
 
 상태는 `planning`, `developing`, `published`, `archived`를 지원합니다.

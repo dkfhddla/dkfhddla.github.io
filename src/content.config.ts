@@ -123,6 +123,7 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 		order: z.number().default(0),
 		draft: z.boolean().default(false),
 		image: z.string().default(""),
+		detailImage: z.string().optional(),
 		tags: z.array(z.string()).default([]),
 		status: z
 			.enum(["unspecified", "planning", "developing", "published", "archived"])

@@ -20,8 +20,9 @@ interface Props {
 }
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
-const { title, description, category, period, image, tags, status, link } =
+const { title, description, category, period, image, detailImage, tags, status, link } =
 	entry.data;
+const cover = detailImage || image;
 ---
 
 <MainGridLayout title={title} description={description} headings={headings}>
@@ -35,7 +36,7 @@ const { title, description, category, period, image, tags, status, link } =
 			<p class="project-intro">{description}</p>
 			{tags.length > 0 && <ul class="project-tags" aria-label="기술 및 주제">{tags.map(tag => <li>{tag}</li>)}</ul>}
 			{link.length > 0 && <div class="project-external-links"><ProjectLinks links={link} /></div>}
-			{image && <ProjectCover src={image} basePath={getFileDirFromPath(entry.filePath || "")} title={title} />}
+			{cover && <ProjectCover src={cover} basePath={getFileDirFromPath(entry.filePath || "")} title={title} />}
 		</header>
 		<Markdown class="project-body"><Content /></Markdown>
 		<footer class="project-detail-footer"><a class="project-link" href={url("/projects/")}>모든 프로젝트 보기 →</a><a class="project-link" href={url("/career/")}>경력 보기 →</a></footer>
