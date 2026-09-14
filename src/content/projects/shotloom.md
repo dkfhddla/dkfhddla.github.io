@@ -4,7 +4,7 @@ description: "Codex를 활용해 개발한 3D 장면·Shot 제작 도구입니�
 category: "3D 콘텐츠 제작 도구"
 period: "2026.04 ~ 2026.08"
 order: 100
-image: ""
+image: "/assets/projects/shotloom/brand-cover.webp"
 tags: ["Codex","AI 에이전틱 개발","React","TypeScript","Rust","Bevy","IK"]
 ---
 

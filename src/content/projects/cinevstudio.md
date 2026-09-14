@@ -4,7 +4,7 @@ description: "CinevStudio는 이전 제작 도구의 편집 경험을 이어받�
 category: "3D 콘텐츠 제작 도구"
 period: "2023.07 ~ 2026.05"
 order: 110
-image: ""
+image: "/assets/projects/cinevstudio/brand-cover.webp"
 tags: ["Unreal Engine","C++","Timeline","UMG"]
 ---
 

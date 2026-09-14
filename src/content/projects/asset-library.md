@@ -4,7 +4,7 @@ description: "Shotloom에서 사용할 3D 자산을 로컬과 호스팅 환경�
 category: "3D 콘텐츠 제작 도구"
 period: "2026.05 ~ 2026.08"
 order: 90
-image: ""
+image: "/assets/projects/asset-library/brand-cover.webp"
 tags: ["API","JSON Schema","Docker","CI"]
 ---
 
