@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import CoverImage from "@/components/common/CoverImage.astro";
+import ProjectLinks from "./ProjectLinks.astro";
+import ProjectStatus from "./ProjectStatus.astro";
+import { siteConfig } from "@/config";
+import { getFileDirFromPath, url } from "@/utils/url-utils";
+
+interface Props {
+	project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const { title, description, category, period, image, tags, status, link } =
+	project.data;
+const detailUrl = url(`/projects/${project.id}/`);
+const visibleTags = tags.slice(0, 2);
+const hiddenTags = tags.slice(2);
+const coverFullWidth = siteConfig.postListLayout.grid.coverFullWidth ?? false;
+---
+
+<article class="project-card card-base" data-project-card data-status={status}
+	data-category={category} data-search={[title, description, ...tags].join(" ").normalize("NFKC").toLocaleLowerCase("ko-KR")}>
+	<a class:list={["project-cover", { "project-cover-full": coverFullWidth }]} href={detailUrl} aria-label={`${title} 상세 보기`}>
+		{image ? (
+			<CoverImage src={image} basePath={getFileDirFromPath(project.filePath || "")} alt={title} class="w-full h-full" preview />
+		) : (
+			<div class="project-cover-placeholder" aria-hidden="true">
+				<Icon name="material-symbols:deployed-code" />
+				<span>{category}</span>
+			</div>
+		)}
+		<span class="project-cover-overlay" aria-hidden="true"><Icon name="material-symbols:chevron-right-rounded" /></span>
+	</a>
+	<div class="project-card-body">
+		<p class="project-eyebrow">{category}</p>
+		<div class="project-card-heading">
+			<ProjectStatus status={status} />
+			<h2><a href={detailUrl} title={title}>{title}</a></h2>
+		</div>
+		<div class="project-card-meta">
+			{period && <p class="project-period"><Icon name="material-symbols:calendar-today-outline-rounded" /><span><span class="sr-only">참여 기간: </span>{period}</span></p>}
+			{tags.length > 0 && <p class="project-card-tags" title={tags.join(" / ")}>
+				<Icon name="material-symbols:tag-rounded" />
+				<span><span class="sr-only">기술 및 주제: </span>{visibleTags.join(" / ")}</span>
+				{hiddenTags.length > 0 && <span><span aria-hidden="true">+{hiddenTags.length}</span><span class="sr-only"> / {hiddenTags.join(" / ")}</span></span>}
+			</p>}
+		</div>
+		{description && <p class="project-description" title={description}>{description}</p>}
+		<div class="project-card-actions">
+			<ProjectLinks links={link} />
+			<a class="project-details-link" href={detailUrl} aria-label={`${title} 상세 보기`}>상세 보기 <Icon name="material-symbols:chevron-right-rounded" /></a>
+		</div>
+	</div>
+</article>

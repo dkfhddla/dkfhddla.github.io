@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectData } from "@/types/project";
+import { projectStatusLabels } from "@/utils/projects-utils";
+
+interface Props {
+	status: ProjectData["status"];
+}
+const { status } = Astro.props;
+const icons = {
+	unspecified: "material-symbols:help-outline",
+	planning: "material-symbols:schedule",
+	developing: "material-symbols:code",
+	published: "material-symbols:rocket-launch",
+	archived: "material-symbols:archive",
+};
+---
+
+{status !== "unspecified" && (
+	<span class="project-status" data-status={status}>
+		<Icon name={icons[status]} />
+		{projectStatusLabels[status]}
+	</span>
+)}
