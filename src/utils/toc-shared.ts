@@ -129,3 +129,8 @@ export function renderTocItemHTML(item: TocItem): string {
         </a>
       `;
 }
+
+/** TOC is available on article and project detail routes, excluding indexes. */
+export function isTocPage(pathname: string): boolean {
+	return /\/(?:posts|projects)\/[^/]+/.test(pathname);
+}

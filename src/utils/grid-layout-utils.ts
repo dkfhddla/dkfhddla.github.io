@@ -2,6 +2,8 @@
  * 主网格列布局与侧边栏可见性 / 吸顶间距管理（从 Layout.astro 迁出）。
  */
 
+import { isTocPage } from "@/utils/toc-shared";
+
 const sidebarStickyState: Record<
 	"left" | "right",
 	{ topClass: "top-0" | "top-4"; hasVisibleTop: boolean }
@@ -161,6 +163,10 @@ export function updateSidebarComponentsVisibility(): void {
 		!isPostPage
 			? widget.classList.add("hidden")
 			: widget.classList.remove("hidden");
+	});
+
+	document.querySelectorAll(".widget-hide-without-toc").forEach((widget) => {
+		widget.classList.toggle("hidden", !isTocPage(window.location.pathname));
 	});
 
 	// 组件可见性变化后，重新读取 top 容器可见性并重算 sticky 间距，避免 swup 切页后残留旧间距

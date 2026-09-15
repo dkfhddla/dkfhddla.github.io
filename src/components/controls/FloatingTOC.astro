@@ -148,6 +148,7 @@ const hideSidebarOnPostPage =
 
 <script>
   import { TOCManager, isPostPage } from "@/utils/toc-utils";
+  import { isTocPage } from "@/utils/toc-shared";
 
   // 从 data 属性读取配置
   const wrapper = document.querySelector('.floating-toc-wrapper');
@@ -252,7 +253,7 @@ const hideSidebarOnPostPage =
   // 检查是否应该显示悬浮目录
   function shouldShowFloatingTOC() {
     // 检查是否为文章页面
-    if (!window.FloatingTOC.isPostPage()) {
+    if (!isTocPage(window.location.pathname)) {
       return false;
     }
 
