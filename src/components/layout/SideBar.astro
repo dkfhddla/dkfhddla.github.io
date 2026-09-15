@@ -12,6 +12,7 @@ import SiteInfo from "@/components/widget/SiteInfo.astro";
 import SiteStats from "@/components/widget/SiteStats.astro";
 import Tags from "@/components/widget/Tags.astro";
 import { sidebarLayoutConfig } from "@/config";
+import { isTocPage } from "@/utils/toc-shared";
 import type {
 	MobileBottomComponentConfig,
 	WidgetComponentConfig,
@@ -104,6 +105,7 @@ const getAnimationDelay = (index: number): string => {
 
 // 判断当前页面是否为文章页面（服务端渲染时确定）
 const isPostPage = Astro.url.pathname.includes("/posts/");
+const hasTocPage = isTocPage(Astro.url.pathname);
 
 // 判断组件在当前页面首屏是否可见（用于计算布局间距，避免隐藏组件占位）
 const isComponentInitiallyVisible = (
@@ -119,7 +121,7 @@ const isComponentInitiallyVisible = (
 	if (
 		"hideOnNonPostPage" in config &&
 		config.hideOnNonPostPage === true &&
-		!isPostPage
+		!(config.type === "sidebarToc" ? hasTocPage : isPostPage)
 	) {
 		return false;
 	}
@@ -146,8 +148,9 @@ const getComponentProps = (
 		}
 	}
 	if ("hideOnNonPostPage" in config && config.hideOnNonPostPage === true) {
-		baseProps.class = `${baseProps.class} widget-hide-on-non-post`;
-		if (!isPostPage) {
+		const isToc = config.type === "sidebarToc";
+		baseProps.class = `${baseProps.class} ${isToc ? "widget-hide-without-toc" : "widget-hide-on-non-post"}`;
+		if (!(isToc ? hasTocPage : isPostPage)) {
 			baseProps.class = `${baseProps.class} hidden`;
 		}
 	}
