@@ -6,7 +6,7 @@ engagement: "company"
 organization: "시나몬"
 period: "2026.05 ~ 2026.08"
 order: 90
-image: ""
+image: "/assets/projects/asset-library/brand-cover.webp"
 tags: ["API","JSON Schema","Docker","CI"]
 ---
 
