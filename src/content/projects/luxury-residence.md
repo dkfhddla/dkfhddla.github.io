@@ -2,6 +2,8 @@
 title: "Luxury Residence"
 description: "모델하우스를 가상 공간에서 체험하는 부동산 마케팅 VR 콘텐츠입니다. Unreal Engine 기반 클라이언트 개발과 VR 연동을 담당했습니다."
 category: "VR·AR 체험 콘텐츠"
+engagement: "company"
+organization: "보라브이알"
 period: "2017.08 ~ 2017.10"
 order: 57
 image: "/assets/projects/luxury-residence/showroom.webp"

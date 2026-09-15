@@ -2,6 +2,8 @@
 title: "CinevStudio"
 description: "CinevStudio는 이전 제작 도구의 편집 경험을 이어받은 Unreal Engine 기반 3D 콘텐츠 제작 도구입니다. 장면 배치부터 캐릭터 Action, Timeline·Shot·Camera 편집, 저장·복구와 산출물 생성까지 개발했습니다."
 category: "3D 콘텐츠 제작 도구"
+engagement: "company"
+organization: "시나몬"
 period: "2023.07 ~ 2026.05"
 order: 110
 image: ""

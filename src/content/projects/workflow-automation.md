@@ -2,6 +2,8 @@
 title: "개발 워크플로 자동화"
 description: "PR 리뷰, Linear 이슈와 배포 상태를 팀 채널에서 추적하기 위한 자동화를 개발했습니다."
 category: "개발 워크플로 자동화"
+engagement: "company"
+organization: "시나몬"
 period: "2026.05 ~ 2026.07"
 order: 10
 image: ""

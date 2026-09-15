@@ -2,6 +2,8 @@ export type ProjectData = {
 	title: string;
 	description: string;
 	category: string;
+	engagement: "unspecified" | "company" | "freelance" | "personal";
+	organization: string;
 	period: string;
 	published?: Date;
 	order: number;

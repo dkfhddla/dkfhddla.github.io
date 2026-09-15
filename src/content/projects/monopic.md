@@ -2,6 +2,8 @@
 title: "Monopic Editor / Viewer"
 description: "도면으로 3D 공간을 만들고 작품과 미디어를 배치하는 VORA VR의 가상 전시 제작 플랫폼입니다."
 category: "VR 플랫폼과 시뮬레이터"
+engagement: "company"
+organization: "보라브이알"
 period: "2017 ~ 2018"
 order: 80
 image: "/assets/projects/monopic/gallery-space.webp"

@@ -1,6 +1,16 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import type { ProjectData } from "@/types/project";
 
+export const projectEngagementLabels: Record<
+	ProjectData["engagement"],
+	string
+> = {
+	company: "회사 프로젝트",
+	freelance: "외주 프로젝트",
+	personal: "개인 프로젝트",
+	unspecified: "참여 형태 미정",
+};
+
 export const projectStatusLabels: Record<ProjectData["status"], string> = {
 	unspecified: "상태 미지정",
 	planning: "계획 중",

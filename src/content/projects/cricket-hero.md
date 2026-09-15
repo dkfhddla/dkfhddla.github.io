@@ -2,6 +2,8 @@
 title: "크리켓 히어로즈"
 description: "실제 피칭·타격 장비 입력을 게임 플레이와 연결하는 스포츠 게임입니다."
 category: "VR 플랫폼과 시뮬레이터"
+engagement: "company"
+organization: "보라브이알"
 period: "2017.11 ~ 2018.03"
 order: 60
 image: "/assets/projects/cricket-hero/game-development.webp"

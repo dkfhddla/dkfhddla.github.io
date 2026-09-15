@@ -2,6 +2,8 @@
 title: "LETHE"
 description: "C2L의 외주로 프로그래밍을 1인 담당한 모바일 턴제 RPG입니다. 전투 UI, 캐릭터 이동, 전투 시스템과 AI를 구현했습니다."
 category: "게임 프로젝트"
+engagement: "freelance"
+organization: "C2L"
 period: "2015"
 order: 26
 image: "/assets/projects/lethe/title.webp"

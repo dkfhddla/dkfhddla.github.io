@@ -32,6 +32,33 @@
 	font-weight: 600;
 	margin-bottom: 0.5rem;
 }
+.project-engagement {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem 0.6rem;
+	margin: 0.6rem 0;
+	color: var(--content-meta);
+	font-size: 0.8rem;
+	line-height: 1.6;
+}
+.project-engagement-badge {
+	border: 1px solid var(--line-color);
+	border-radius: 0.4rem;
+	padding: 0.15rem 0.5rem;
+	color: var(--btn-content);
+	background: var(--btn-regular-bg);
+	font-weight: 600;
+}
+.project-filter-label {
+	margin-top: 1rem;
+	color: var(--project-text);
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+.project-filter-label + .project-category-filters {
+	margin-top: 0.5rem;
+}
 .project-intro {
 	margin-top: 0.85rem;
 	line-height: 1.8;

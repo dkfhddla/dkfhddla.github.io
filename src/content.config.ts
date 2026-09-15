@@ -118,6 +118,10 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 		title: z.string(),
 		description: z.string().default(""),
 		category: z.string().default(""),
+		engagement: z
+			.enum(["unspecified", "company", "freelance", "personal"])
+			.default("unspecified"),
+		organization: z.string().default(""),
 		period: z.string().default(""),
 		published: z.coerce.date().optional(),
 		order: z.number().default(0),

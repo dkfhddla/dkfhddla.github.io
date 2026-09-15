@@ -2,6 +2,8 @@
 title: "시등도"
 description: "한국에 전기가 처음 들어오던 순간을 트레드밀로 걸으며 체험하는 VR 콘텐츠입니다. 4개 씬 구성과 트레드밀·키오스크·VR 연동을 담당했습니다."
 category: "VR·AR 체험 콘텐츠"
+engagement: "company"
+organization: "보라브이알"
 period: "2017.12 ~ 2018.01"
 order: 59
 image: "/assets/projects/sideungdo/vr-experience.webp"

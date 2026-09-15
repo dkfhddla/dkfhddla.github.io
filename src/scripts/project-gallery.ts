@@ -2,6 +2,7 @@
 class ProjectGallery extends HTMLElement {
 	private events?: AbortController;
 	private category = "";
+	private engagement = "";
 	private composing = false;
 
 	connectedCallback(): void {
@@ -26,6 +27,12 @@ class ProjectGallery extends HTMLElement {
 				...this.querySelectorAll<HTMLButtonElement>("button[data-category]"),
 			].some((button) => button.dataset.category === category)
 				? category
+				: "";
+			const engagement = params.get("engagement") ?? "";
+			this.engagement = [
+				...this.querySelectorAll<HTMLButtonElement>("button[data-engagement]"),
+			].some((button) => button.dataset.engagement === engagement)
+				? engagement
 				: "";
 			this.applyFilters(false);
 		};
@@ -60,6 +67,8 @@ class ProjectGallery extends HTMLElement {
 				if (!button) return;
 				if (button.hasAttribute("data-category")) {
 					this.category = button.dataset.category ?? "";
+				} else if (button.hasAttribute("data-engagement")) {
+					this.engagement = button.dataset.engagement ?? "";
 				} else if (
 					button.hasAttribute("data-clear") ||
 					button.hasAttribute("data-reset")
@@ -68,6 +77,7 @@ class ProjectGallery extends HTMLElement {
 					this.composing = false;
 					if (button.hasAttribute("data-reset")) {
 						this.category = "";
+						this.engagement = "";
 						status.value = "all";
 					}
 					search.focus();
@@ -102,6 +112,7 @@ class ProjectGallery extends HTMLElement {
 			const matches =
 				(!query || card.dataset.search?.includes(query)) &&
 				(!this.category || card.dataset.category === this.category) &&
+				(!this.engagement || card.dataset.engagement === this.engagement) &&
 				(status.value === "all" || card.dataset.status === status.value);
 			card.hidden = !matches;
 			if (matches) count++;
@@ -114,6 +125,14 @@ class ProjectGallery extends HTMLElement {
 				String(button.dataset.category === this.category),
 			);
 		}
+		for (const button of this.querySelectorAll<HTMLButtonElement>(
+			"button[data-engagement]",
+		)) {
+			button.setAttribute(
+				"aria-pressed",
+				String(button.dataset.engagement === this.engagement),
+			);
+		}
 		const clear = this.querySelector<HTMLButtonElement>("[data-clear]");
 		if (clear) clear.hidden = search.value.length === 0;
 		const empty = this.querySelector<HTMLElement>("[data-no-results]");
@@ -121,7 +140,7 @@ class ProjectGallery extends HTMLElement {
 		const counter = this.querySelector<HTMLElement>("[data-result-count]");
 		if (counter)
 			counter.textContent =
-				query || this.category || status.value !== "all"
+				query || this.category || this.engagement || status.value !== "all"
 					? `${cards.length}개 중 ${count}개 프로젝트`
 					: `전체 ${count}개 프로젝트`;
 		if (updateUrl) {
@@ -129,6 +148,7 @@ class ProjectGallery extends HTMLElement {
 			for (const [key, value] of [
 				["q", search.value.trim()],
 				["category", this.category],
+				["engagement", this.engagement],
 				["status", status.value === "all" ? "" : status.value],
 			]) {
 				if (value) location.searchParams.set(key, value);
