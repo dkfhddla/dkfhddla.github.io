@@ -2,6 +2,7 @@
 title: "Night Guard: Hospital"
 description: "CCTV로 병실을 감시하는 VR 공포 게임입니다. 사업계획서 경진대회 우수상을 받은 기획을 바탕으로 Unity 팀 개발에서 기획·PM을 맡고, 이후 Unreal Engine으로 프로토타입을 1인 개발했습니다."
 category: "게임 프로젝트"
+engagement: "personal"
 period: "2014 ~ 2015"
 order: 20
 image: "/assets/projects/night-guard/cctv.webp"

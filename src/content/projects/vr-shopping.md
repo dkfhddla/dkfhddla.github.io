@@ -2,6 +2,7 @@
 title: "모바일 VR 홈쇼핑"
 description: "모바일 VR 공간에서 상품을 3D로 살펴보고 구매 페이지로 이동하는 외주 프로젝트입니다. 공간 구성부터 상품 조작·데이터 연동까지 프로그래밍 전반을 담당했습니다."
 category: "VR 플랫폼과 시뮬레이터"
+engagement: "freelance"
 period: "2019.01 ~ 2019.04"
 order: 50
 image: ""

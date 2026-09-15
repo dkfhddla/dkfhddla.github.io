@@ -2,6 +2,8 @@
 title: "asset-library"
 description: "Shotloom에서 사용할 3D 자산을 로컬과 호스팅 환경에 일관되게 전달하는 독립 프로젝트입니다. 자산 공급자와 편집기 사이의 API·Schema·빌드·검증·운영 경계를 설계하고 구현했습니다."
 category: "3D 콘텐츠 제작 도구"
+engagement: "company"
+organization: "시나몬"
 period: "2026.05 ~ 2026.08"
 order: 90
 image: ""

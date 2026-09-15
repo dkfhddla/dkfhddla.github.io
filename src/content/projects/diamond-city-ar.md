@@ -2,6 +2,8 @@
 title: "Diamond City AR"
 description: "베트남 다이아몬드 시티의 아파트를 건설 현장에서 미리 보는 AR 콘텐츠입니다. Unity와 C#으로 콘텐츠 동작 프로세스를 개발했습니다."
 category: "VR·AR 체험 콘텐츠"
+engagement: "company"
+organization: "보라브이알"
 period: "2017.12 ~ 2018.01"
 order: 58
 image: "/assets/projects/diamond-city-ar/architecture.webp"

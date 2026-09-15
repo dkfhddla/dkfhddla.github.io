@@ -4,6 +4,8 @@ import { Icon } from "astro-icon/components";
 import CoverImage from "@/components/common/CoverImage.astro";
 import ProjectLinks from "./ProjectLinks.astro";
 import ProjectStatus from "./ProjectStatus.astro";
+import ProjectEngagement from "./ProjectEngagement.astro";
+import { projectEngagementLabels } from "@/utils/projects-utils";
 import { siteConfig } from "@/config";
 import { getFileDirFromPath, url } from "@/utils/url-utils";
 
@@ -11,6 +13,7 @@ interface Props {
 	project: CollectionEntry<"projects">;
 }
 const { project } = Astro.props;
+const { engagement, organization } = project.data;
 const { title, description, category, period, image, tags, status, link } =
 	project.data;
 const detailUrl = url(`/projects/${project.id}/`);
@@ -19,8 +22,8 @@ const hiddenTags = tags.slice(2);
 const coverFullWidth = siteConfig.postListLayout.grid.coverFullWidth ?? false;
 ---
 
-<article class="project-card card-base" data-project-card data-status={status}
-	data-category={category} data-search={[title, description, ...tags].join(" ").normalize("NFKC").toLocaleLowerCase("ko-KR")}>
+<article class="project-card card-base" data-project-card data-status={status} data-engagement={engagement}
+	data-category={category} data-search={[title, description, organization, projectEngagementLabels[engagement], ...tags].join(" ").normalize("NFKC").toLocaleLowerCase("ko-KR")}>
 	<a class:list={["project-cover", { "project-cover-full": coverFullWidth }]} href={detailUrl} aria-label={`${title} 상세 보기`}>
 		{image ? (
 			<CoverImage src={image} basePath={getFileDirFromPath(project.filePath || "")} alt={title} class="w-full h-full" preview />
@@ -34,6 +37,7 @@ const coverFullWidth = siteConfig.postListLayout.grid.coverFullWidth ?? false;
 	</a>
 	<div class="project-card-body">
 		<p class="project-eyebrow">{category}</p>
+		<ProjectEngagement engagement={engagement} organization={organization} />
 		<div class="project-card-heading">
 			<ProjectStatus status={status} />
 			<h2><a href={detailUrl} title={title}>{title}</a></h2>

@@ -1,0 +1,15 @@
+---
+import type { ProjectData } from "@/types/project";
+import { projectEngagementLabels } from "@/utils/projects-utils";
+
+interface Props {
+	engagement: ProjectData["engagement"];
+	organization: string;
+}
+const { engagement, organization } = Astro.props;
+---
+
+<p class="project-engagement">
+	<span class="project-engagement-badge">{projectEngagementLabels[engagement]}</span>
+	{organization && <span><span class="sr-only">{engagement === "freelance" ? "의뢰처: " : "소속: "}</span>{organization}</span>}
+</p>

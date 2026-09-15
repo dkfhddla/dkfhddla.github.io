@@ -2,6 +2,8 @@
 title: "Shotloom"
 description: "웹 UI와 Rust 런타임을 연결해 3D 장면과 Shot을 편집하는 제작 도구입니다. 사용자 입력부터 엔진 평가, 저장과 Export까지 이어지는 기능을 하나의 흐름으로 구현했습니다."
 category: "3D 콘텐츠 제작 도구"
+engagement: "company"
+organization: "시나몬"
 period: "2026.04 ~ 2026.08"
 order: 100
 image: ""

@@ -2,6 +2,7 @@
 title: "결혼하자! Shake It!"
 description: "스마트폰 자이로센서를 활용하는 Unity 기반 방치형 클리커 게임입니다. UI·배경 디자인과 데이터 테이블 기반 해금 조건, 보상·타이머·업그레이드 기능을 구현했습니다."
 category: "게임 프로젝트"
+engagement: "personal"
 period: "2016"
 order: 40
 image: "/assets/projects/shake-it/main-ui.webp"

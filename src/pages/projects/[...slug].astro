@@ -3,6 +3,7 @@ import { type CollectionEntry, render } from "astro:content";
 import ProjectCover from "@/components/pages/projects/ProjectCover.astro";
 import ProjectLinks from "@/components/pages/projects/ProjectLinks.astro";
 import ProjectStatus from "@/components/pages/projects/ProjectStatus.astro";
+import ProjectEngagement from "@/components/pages/projects/ProjectEngagement.astro";
 import Markdown from "@/components/common/Markdown.astro";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
 import { getSortedProjects } from "@/utils/projects-utils";
@@ -19,6 +20,7 @@ interface Props {
 	entry: CollectionEntry<"projects">;
 }
 const { entry } = Astro.props;
+const { engagement, organization } = entry.data;
 const { Content, headings } = await render(entry);
 const { title, description, category, period, image, detailImage, tags, status, link } =
 	entry.data;
@@ -31,6 +33,7 @@ const cover = detailImage || image;
 		<header class="project-detail-header">
 			<p class="project-eyebrow">{category}</p>
 			<h1 data-pagefind-meta="title">{title}</h1>
+			<ProjectEngagement engagement={engagement} organization={organization} />
 			{period && <p class="project-period">참여 기간 · {period}</p>}
 			<ProjectStatus status={status} />
 			<p class="project-intro">{description}</p>

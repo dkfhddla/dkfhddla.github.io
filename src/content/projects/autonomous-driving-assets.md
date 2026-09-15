@@ -1,21 +1,23 @@
 ---
 title: "자율주행 도구 에셋화"
-description: "ADAS 시뮬레이터의 신호등·도로 도구와 차량 AI를 재사용 가능한 Unreal Engine 에셋으로 정리한 1인 외주 프로젝트입니다."
+description: "소울엑스에서 ADAS 시뮬레이터의 신호등·도로 도구와 차량 AI를 재사용 가능한 Unreal Engine 에셋으로 정리한 회사 프로젝트입니다. 프로그래밍을 1인 담당했습니다."
 category: "VR 플랫폼과 시뮬레이터"
+engagement: "company"
+organization: "소울엑스"
 period: "2019.01 ~ 2019.02"
 order: 65
 image: ""
-tags: ["외주 개발", "Unreal Engine", "에셋화", "인터페이스 설계", "차량 AI"]
+tags: ["Unreal Engine", "에셋화", "인터페이스 설계", "차량 AI"]
 ---
 
 **기간:** 2019.01 ~ 2019.02\
-**형태:** 외주 개발\
+**소속:** 소울엑스\
 **역할:** 1인 프로그래밍, Unreal Engine 에셋화\
 **환경:** Unreal Engine
 
 ## 시뮬레이터 도구를 재사용 가능한 에셋으로
 
-[ADAS 자율주행 시뮬레이터](/projects/adas-simulator/)에서 사용했던 도구들을 에셋스토어에 등록할 수 있는 형태로 변경하고 정리한 후속 외주 프로젝트입니다. 프로그래머 1명으로 작업을 담당했습니다.
+[ADAS 자율주행 시뮬레이터](/projects/adas-simulator/)에서 사용했던 도구들을 에셋스토어에 등록할 수 있는 형태로 변경하고 정리한 소울엑스의 회사 프로젝트입니다. 프로그래머 1명으로 작업을 담당했습니다.
 
 ## 담당한 개발
 

@@ -2,6 +2,7 @@
 title: "IOCP 서버 — 졸업 작품"
 description: "3:3 AOS 게임을 위해 제작한 C++ IOCP 서버입니다. 접속·패킷 처리와 캐릭터 선택, 이동·전투 로직의 서버 처리를 구현했습니다."
 category: "서버 개발"
+engagement: "personal"
 order: 15
 image: "/assets/projects/iocp-server/server-start.webp"
 tags: ["C++", "IOCP", "Windows Socket", "멀티스레드", "패킷 처리"]

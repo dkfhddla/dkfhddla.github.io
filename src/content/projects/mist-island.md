@@ -2,6 +2,7 @@
 title: "Mist Island"
 description: "소리·빛·냄새의 흔적을 AI가 감지해 플레이어를 추적하는 게임입니다. 인벤토리·아이템 상호작용과 흔적 시스템을 구현하고 PM·레벨 설계를 담당했습니다."
 category: "게임 프로젝트"
+engagement: "personal"
 period: "2015 ~ 2016"
 order: 30
 image: "/assets/projects/mist-island/hospital-layout.webp"

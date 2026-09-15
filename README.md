@@ -33,6 +33,8 @@ pnpm build
 title: "프로젝트 이름"
 description: "목록에 표시할 간단한 설명"
 category: "3D 콘텐츠 제작 도구"
+engagement: "company"
+organization: "시나몬"
 period: "2026.04 ~ 2026.08"
 order: 100
 image: "/assets/projects/example/cover.webp"
@@ -56,7 +58,11 @@ link:
 상태는 `planning`, `developing`, `published`, `archived`를 지원합니다.
 생략하면 `unspecified`(상태 미지정)이며, 참여 기간만으로 제품의 출시·운영 상태를 추정하지 않습니다.
 `draft: true`인 프로젝트는 개발 미리보기에는 표시되고 배포 빌드에서는 제외됩니다.
-검색과 분야·상태 필터는 URL에 저장되어 새로고침과 뒤로 가기에서 복원됩니다.
+`engagement`는 `company`(회사), `freelance`(외주), `personal`(개인)을 지원합니다.
+생략하면 `unspecified`(참여 형태 미정)이며, 개발 인원이나 기술로 형태를 추정하지 않습니다.
+`organization`에는 회사 프로젝트의 소속 또는 외주 프로젝트의 의뢰처를 적습니다.
+참여 형태·소속은 카드와 상세에 표시되고 소속 이름으로 검색할 수도 있습니다.
+검색과 참여 형태·분야·상태 필터는 함께 적용되며 URL에 저장되어 새로고침과 뒤로 가기에서 복원됩니다.
 
 ## Credits
 
