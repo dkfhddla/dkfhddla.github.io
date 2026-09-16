@@ -5,7 +5,7 @@ category: "3D 콘텐츠 제작 도구"
 engagement: "company"
 organization: "시나몬"
 order: 105
-image: "/assets/projects/spice-pro/actor-path.webp"
+image: "/assets/projects/spice-pro/cover-brand.png"
 tags: ["Unreal Engine 5", "C++", "Character Customization", "Storyboard", "Animation", "Camera", "Timeline"]
 ---
 
@@ -21,6 +21,8 @@ Unreal Engine의 Sequence를 활용해 **런타임에서 편집할 수 있도록
 제작의 기본 단위인 컷(Cut)은 영화의 한 샷에 해당합니다. 하나의 컷에 카메라와 배우의 애니메이션을 담고, 스토리보드에서 여러 컷과 씬을 관리합니다. 완성한 컷을 템플릿으로 저장해 다른 장면에도 활용할 수 있습니다.
 
 이 페이지는 당시 사용 가이드와 기획 자료를 바탕으로 Spice Pro의 기능과 제작 과정을 소개합니다. 이후 담당한 편집 시스템 개발 경험은 [CineV Studio](/projects/cinevstudio/)에서 볼 수 있습니다.
+
+![배우의 이동 경로와 타임라인을 편집하는 Spice Pro 화면](/assets/projects/spice-pro/actor-path.webp)
 
 ## 담당 역할과 주요 작업
 
