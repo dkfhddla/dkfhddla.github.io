@@ -65,6 +65,13 @@ Studio 1.4 팀 릴리즈 시연입니다. 현재 캐릭터와 전체 트랙 사�
 
 프레임과 화면 좌표의 변환을 공통화하고, 고정 폭 영역과 줌이 적용되는 재생 구간을 나눠 계산했습니다. 경계가 어느 샷에 속하는지도 함께 처리해 재생 헤드·드래그·샷 판정이 같은 좌표 기준을 사용하도록 정리했습니다.
 
+<figure>
+  <a class="project-detail-cover no-styling" href="/assets/projects/cinevstudio/timeline-boundary-diagram.svg" data-no-swup data-fancybox="cinevstudio-diagrams" data-type="image" aria-label="시간 경계와 화면 위치 도식 확대 보기">
+    <img src="/assets/projects/cinevstudio/timeline-boundary-diagram.svg" alt="시간축에서는 샷 A의 끝과 샷 B의 시작이 같은 프레임이지만, 화면에서는 꼬리·여백·다음 샷 헤더를 사이에 두고 서로 다른 위치가 됩니다." width="400" height="466" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; margin: 0;">
+  </a>
+  <figcaption>샷 경계의 개념도입니다. 같은 프레임도 앞 샷의 끝인지 다음 샷의 시작인지 함께 구분해 화면 위치를 계산합니다. 이미지를 선택하면 확대할 수 있습니다.</figcaption>
+</figure>
+
 ### 편집 단위에 맞춰 복구하고 경계 조건 검토
 
 클립 생성에 따른 리플이 여러 번의 Undo로 나뉘던 문제를 수정해, 한 편집 동작에 속한 변경을 함께 되돌리도록 했습니다. 샷 범위를 복구할 때 현재 클립 길이 제한에 막혀 원래 범위로 줄어들지 않던 문제도 수정했습니다.
@@ -130,6 +137,13 @@ UMG 위젯은 다음 기준으로 구성했습니다. 실제 위젯 구성을 �
 **확인된 결과와 기여:** 저장 도중 실패를 감지하면 기존 파일을 복원하거나 새 파일을 정리하고, 모든 저장 단계가 끝나야 성공을 기록하도록 바꿨습니다. 백업·롤백과 버전 조회·관리는 직접 구현했으며, 동료의 JSON 복구·파일 이동 검사·버전 비교 보강은 리뷰하고 통합했습니다.
 
 **검증 범위와 한계:** 복구 대상은 프로그램이 감지한 저장 실패입니다. 강제 종료나 모든 장애에서의 원자적 저장을 보장한 것은 아닙니다.
+
+<figure>
+  <a class="project-detail-cover no-styling" href="/assets/projects/cinevstudio/save-recovery-diagram.svg" data-no-swup data-fancybox="cinevstudio-diagrams" data-type="image" aria-label="부분 저장 실패의 복구 흐름 도식 확대 보기">
+    <img src="/assets/projects/cinevstudio/save-recovery-diagram.svg" alt="기존 파일을 백업하고 씬·JSON을 저장합니다. 모든 저장 단계가 성공해야 성공을 기록하며, 저장 실패를 감지하면 기존 파일을 복원하거나 새 파일을 정리합니다." width="400" height="478" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; margin: 0;">
+  </a>
+  <figcaption>저장 결과에 따른 처리를 단순화한 도식입니다. 복구 성공이나 강제 종료 시 원자적 저장을 보장한다는 의미는 아닙니다. 이미지를 선택하면 확대할 수 있습니다.</figcaption>
+</figure>
 
 ### Commandlet에서 누락되는 Gaussian 배경 출력
 

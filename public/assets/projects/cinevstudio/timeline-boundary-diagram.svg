@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="466" viewBox="0 0 400 466" role="img" aria-labelledby="title desc">
+  <title id="title">같은 시간 경계, 다른 화면 위치</title>
+  <desc id="desc">시간축에서는 샷 A의 끝과 샷 B의 시작이 같은 프레임이다. 화면에서는 그 사이에 시간 길이가 없는 꼬리, 여백, 다음 샷 헤더가 들어간다. 따라서 프레임과 함께 앞 샷의 끝인지 다음 샷의 시작인지 구분해 화면 위치를 계산한다.</desc>
+  <rect width="400" height="466" rx="12" fill="#f5f8f7"/>
+  <g font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" fill="#203d36">
+    <text x="24" y="40" font-size="22" font-weight="700">같은 시간 경계, 다른 화면 위치</text>
+    <text x="24" y="84" font-size="19" font-weight="700">시간축</text>
+    <text x="376" y="84" text-anchor="end" font-size="18">같은 프레임</text>
+    <rect x="24" y="102" width="176" height="50" rx="4" fill="#d7ece5"/>
+    <rect x="200" y="102" width="176" height="50" rx="4" fill="#dce7f2"/>
+    <text x="112" y="134" text-anchor="middle" font-size="20">샷 A</text>
+    <text x="288" y="134" text-anchor="middle" font-size="20">샷 B</text>
+    <path d="M200 96 V158" stroke="#203d36" stroke-width="3"/>
+    <path d="M200 160 L132 226 M200 160 L268 226" fill="none" stroke="#687e77" stroke-width="2" stroke-dasharray="5 5"/>
+    <text x="24" y="211" font-size="19" font-weight="700">화면축</text>
+    <rect x="24" y="232" width="108" height="70" rx="4" fill="#d7ece5"/>
+    <rect x="132" y="232" width="136" height="70" fill="#edf0ef" stroke="#687e77" stroke-dasharray="4 4"/>
+    <rect x="268" y="232" width="108" height="70" rx="4" fill="#dce7f2"/>
+    <text x="78" y="275" text-anchor="middle" font-size="20">샷 A</text>
+    <text x="200" y="261" text-anchor="middle" font-size="18">꼬리 · 여백</text>
+    <text x="200" y="286" text-anchor="middle" font-size="18">다음 샷 헤더</text>
+    <text x="322" y="275" text-anchor="middle" font-size="20">샷 B</text>
+    <path d="M132 226 V310 M268 226 V310" stroke="#203d36" stroke-width="3"/>
+    <text x="128" y="339" text-anchor="end" font-size="19">앞 샷의 끝</text>
+    <text x="272" y="339" font-size="19">다음 샷 시작</text>
+    <path d="M143 324 H257 M143 320 V328 M257 320 V328" stroke="#687e77" stroke-width="2"/>
+    <text x="200" y="374" text-anchor="middle" font-size="18">사이의 UI 영역에는 시간 길이가 없음</text>
+    <path d="M24 396 H376" stroke="#c2cec9"/>
+    <text x="200" y="430" text-anchor="middle" font-size="20" font-weight="700">프레임 + 경계 구분 → 화면 위치</text>
+  </g>
+</svg>

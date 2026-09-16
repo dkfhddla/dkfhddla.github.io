@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="478" viewBox="0 0 400 478" role="img" aria-labelledby="title desc">
+  <title id="title">부분 저장 실패의 복구 흐름</title>
+  <desc id="desc">기존 파일을 백업한 뒤 씬과 JSON 파일을 저장한다. 모든 저장 단계가 성공해야 성공을 기록한다. 프로그램이 저장 실패를 감지하면 기존 파일 복원 또는 새 파일 정리를 수행한다. 이 도식은 강제 종료 시 원자적 저장이나 복구의 성공을 보장하지 않는다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9" fill="none" stroke="#687e77" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <rect width="400" height="478" rx="12" fill="#f5f8f7"/>
+  <g font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" fill="#203d36" text-anchor="middle">
+    <text x="24" y="40" text-anchor="start" font-size="22" font-weight="700">부분 저장 실패의 복구 흐름</text>
+    <rect x="40" y="70" width="320" height="58" rx="6" fill="#e5edeb" stroke="#c2cec9"/>
+    <text x="200" y="106" font-size="20" font-weight="700">기존 파일 백업</text>
+    <path d="M200 128 V159" stroke="#687e77" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="40" y="166" width="320" height="82" rx="6" fill="#e5edeb" stroke="#c2cec9"/>
+    <text x="200" y="199" font-size="20" font-weight="700">씬 · JSON 파일 저장</text>
+    <text x="200" y="229" font-size="18">각 단계의 실패 확인</text>
+    <path d="M200 248 V270 M200 270 H104 V319 M200 270 H296 V319" fill="none" stroke="#687e77" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M104 306 V319" stroke="#687e77" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="48" y="280" width="112" height="26" fill="#f5f8f7"/>
+    <rect x="240" y="280" width="112" height="26" fill="#f5f8f7"/>
+    <text x="104" y="300" font-size="19" font-weight="700">모두 성공</text>
+    <text x="296" y="300" font-size="19" font-weight="700">실패 감지</text>
+    <rect x="24" y="328" width="160" height="84" rx="6" fill="#d7ece5" stroke="#749d8f"/>
+    <rect x="216" y="328" width="160" height="84" rx="6" fill="#f5e8d3" stroke="#b39a73"/>
+    <text x="104" y="377" font-size="20" font-weight="700">성공 기록</text>
+    <text x="296" y="360" font-size="19" font-weight="700">기존 파일 복원</text>
+    <text x="296" y="390" font-size="18">또는 새 파일 정리</text>
+    <text x="200" y="452" font-size="18">프로그램이 감지한 저장 실패를 대상으로 함</text>
+  </g>
+</svg>
