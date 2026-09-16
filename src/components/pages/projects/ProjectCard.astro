@@ -2,27 +2,29 @@
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import CoverImage from "@/components/common/CoverImage.astro";
+import { siteConfig } from "@/config";
+import { projectEngagementLabels } from "@/utils/projects-utils";
+import { getFileDirFromPath, url } from "@/utils/url-utils";
+import ProjectEngagement from "./ProjectEngagement.astro";
 import ProjectLinks from "./ProjectLinks.astro";
 import ProjectStatus from "./ProjectStatus.astro";
-import ProjectEngagement from "./ProjectEngagement.astro";
-import { projectEngagementLabels } from "@/utils/projects-utils";
-import { siteConfig } from "@/config";
-import { getFileDirFromPath, url } from "@/utils/url-utils";
 
 interface Props {
 	project: CollectionEntry<"projects">;
+	variant?: "selected" | "archive";
 }
-const { project } = Astro.props;
+const { project, variant = "selected" } = Astro.props;
 const { engagement, organization } = project.data;
 const { title, description, category, period, image, tags, status, link } =
 	project.data;
 const detailUrl = url(`/projects/${project.id}/`);
-const visibleTags = tags.slice(0, 2);
-const hiddenTags = tags.slice(2);
+const visibleTagCount = variant === "archive" ? 2 : 3;
+const visibleTags = tags.slice(0, visibleTagCount);
+const hiddenTags = tags.slice(visibleTagCount);
 const coverFullWidth = siteConfig.postListLayout.grid.coverFullWidth ?? false;
 ---
 
-<article class="project-card card-base" data-project-card data-status={status} data-engagement={engagement}
+<article class:list={["project-card", `project-card-${variant}`, "card-base"]} data-project-card data-status={status} data-engagement={engagement}
 	data-category={category} data-search={[title, description, organization, projectEngagementLabels[engagement], ...tags].join(" ").normalize("NFKC").toLocaleLowerCase("ko-KR")}>
 	<a class:list={["project-cover", { "project-cover-full": coverFullWidth }]} href={detailUrl} aria-label={`${title} 상세 보기`}>
 		{image ? (

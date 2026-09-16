@@ -1,0 +1,102 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import CoverImage from "@/components/common/CoverImage.astro";
+import { siteConfig } from "@/config";
+import { projectEngagementLabels } from "@/utils/projects-utils";
+import { getFileDirFromPath, url } from "@/utils/url-utils";
+
+interface Props {
+	project: CollectionEntry<"projects">;
+	index: string;
+	contributions: readonly string[];
+	decision: string;
+	result: string;
+}
+
+const { project, index, contributions, decision, result } = Astro.props;
+const {
+	title,
+	description,
+	category,
+	engagement,
+	organization,
+	period,
+	image,
+	tags,
+} = project.data;
+const detailUrl = url(`/projects/${project.id}/`);
+const coverFullWidth = siteConfig.postListLayout.grid.coverFullWidth ?? false;
+---
+
+<article
+	class="project-feature-card card-base"
+	data-project-card
+	data-status={project.data.status}
+	data-engagement={engagement}
+	data-category={category}
+	data-search={[title, description, organization, projectEngagementLabels[engagement], ...tags]
+		.join(" ")
+		.normalize("NFKC")
+		.toLocaleLowerCase("ko-KR")}
+>
+	<a
+		class:list={["project-feature-cover", { "project-cover-full": coverFullWidth }]}
+		href={detailUrl}
+		aria-label={`${title} 상세 보기`}
+	>
+		{image ? (
+			<CoverImage
+				src={image}
+				basePath={getFileDirFromPath(project.filePath || "")}
+				alt={title}
+				class="w-full h-full"
+				preview
+			/>
+		) : (
+			<div class="project-cover-placeholder" aria-hidden="true">
+				<Icon name="material-symbols:deployed-code" />
+				<span>{category}</span>
+			</div>
+		)}
+		<span class="project-feature-index" aria-hidden="true">{index}</span>
+	</a>
+	<div class="project-feature-body">
+		<div class="project-feature-heading">
+			<div>
+				<p class="project-eyebrow">{category}</p>
+				<h2><a href={detailUrl}>{title}</a></h2>
+			</div>
+			<p class="project-feature-period">
+				<span>{organization}</span>
+				{period && <span>{period}</span>}
+			</p>
+		</div>
+		<p class="project-feature-description">{description}</p>
+		<div class="project-feature-summary">
+			<section aria-labelledby={`${project.id}-contribution`}>
+				<h3 id={`${project.id}-contribution`}>주요 기여</h3>
+				<ul>
+					{contributions.map((item) => <li>{item}</li>)}
+				</ul>
+			</section>
+			<section aria-labelledby={`${project.id}-decision`}>
+				<h3 id={`${project.id}-decision`}>핵심 판단</h3>
+				<p>{decision}</p>
+			</section>
+			<section class="project-feature-result" aria-labelledby={`${project.id}-result`}>
+				<h3 id={`${project.id}-result`}>결과</h3>
+				<p>{result}</p>
+			</section>
+		</div>
+		<div class="project-feature-footer">
+			<ul class="project-feature-tags" aria-label="주요 기술">
+				{tags.slice(0, 6).map((tag) => <li>{tag}</li>)}
+			</ul>
+			<a class="project-feature-link" href={detailUrl}>
+				프로젝트 자세히 보기
+				<Icon name="material-symbols:arrow-forward-rounded" />
+			</a>
+		</div>
+	</div>
+</article>

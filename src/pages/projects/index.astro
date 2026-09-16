@@ -1,27 +1,93 @@
 ---
+import FeaturedProjectCard from "@/components/pages/projects/FeaturedProjectCard.astro";
 import ProjectCard from "@/components/pages/projects/ProjectCard.astro";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
-import { getSortedProjects, projectStatusLabels, projectEngagementLabels } from "@/utils/projects-utils";
+import {
+	getSortedProjects,
+	projectEngagementLabels,
+	projectStatusLabels,
+} from "@/utils/projects-utils";
 import { url } from "@/utils/url-utils";
 import "@/styles/projects.css";
 
 const projects = await getSortedProjects();
 const engagements = Object.entries(projectEngagementLabels).filter(([key]) =>
-	projects.some(project => project.data.engagement === key),
+	projects.some((project) => project.data.engagement === key),
 );
 const categories = [
 	...new Set(projects.map((project) => project.data.category).filter(Boolean)),
 ];
+
+const featuredOrder = ["cinevstudio", "shotloom"];
+const selectedOrder = [
+	"spice-pro",
+	"asset-library",
+	"monopic",
+	"adas-simulator",
+];
+
+const byId = new Map(projects.map((project) => [project.id, project]));
+const featuredProjects = featuredOrder.flatMap((id) => {
+	const project = byId.get(id);
+	return project ? [project] : [];
+});
+const selectedProjects = selectedOrder.flatMap((id) => {
+	const project = byId.get(id);
+	return project ? [project] : [];
+});
+const curatedIds = new Set([...featuredOrder, ...selectedOrder]);
+const archiveProjects = projects.filter(
+	(project) => !curatedIds.has(project.id),
+);
+
+const featuredContent = {
+	cinevstudio: {
+		contributions: [
+			"Track·Clip·Shot 기반 Timeline과 Camera 편집",
+			"Undo·Redo, 프로젝트 저장·복구, CLI 자동화",
+			"UI System 구조 설계와 UI/UX Unit 리드",
+		],
+		decision:
+			"기능과 상태 책임이 개별 Widget에 집중되지 않도록 Subsystem·Layout·Layer와 Base·Component·View의 역할을 나눴습니다.",
+		result:
+			"편집 동작과 공통 UI 책임을 분리하고, 팀이 함께 사용할 수 있는 구현 규칙으로 정리했습니다.",
+	},
+	shotloom: {
+		contributions: [
+			"React UI와 Rust·Bevy 런타임 명령 연결",
+			"PerformanceTrack·Clip, Pose·IK 평가 흐름",
+			"Undo·Redo, Save·Reload, Preview·Export 일관성 검증",
+		],
+		decision:
+			"캐릭터 공통 상태에 남던 Manual Pose를 Clip이 소유하도록 바꿔, 편집 단위와 상태 소유권을 일치시켰습니다.",
+		result:
+			"같은 원본 Pose를 쓰는 Clip도 독립적으로 편집하고, 저장·Undo·Preview가 같은 상태 모델을 사용하도록 정리했습니다.",
+	},
+} as const;
 ---
 
 <MainGridLayout title="프로젝트" description="Unreal Engine·C++ 제작 도구부터 React·Rust 3D 편집기까지, 심현보의 대표 프로젝트와 개인 기여">
 	<project-gallery class="project-gallery">
 		<header class="card-base project-header">
-			<p class="project-eyebrow">포트폴리오</p>
-			<h1>만들어 온 프로젝트</h1>
-			<p class="project-intro">Unreal Engine·C++ 기반 제작 도구부터 React·Rust 3D 편집기까지 개발했습니다. Timeline·Camera·Action 편집과 상태 관리, 저장·복구·출력을 연결한 경험을 소개합니다.</p>
-			<p class="project-note">회사·외주·개인 프로젝트에서 맡은 역할과 구현 내용을 정리했습니다. 참여 형태와 분야를 함께 선택해 살펴볼 수 있습니다.</p>
-			<a class="project-link" href={url("/career/")}>핵심 역량과 경력 보기 <span aria-hidden="true">→</span></a>
+			<div class="project-header-copy">
+				<p class="project-eyebrow">3D Tools / Editor Developer</p>
+				<h1>실시간 3D 콘텐츠를 만드는<br />도구를 개발합니다</h1>
+				<p class="project-intro">Unreal Engine·C++ 기반 게임과 VR 개발에서 시작해 Timeline·Camera·Animation·IK·Undo/Redo·Save/Restore를 갖춘 3D 제작 도구를 개발해 왔습니다.</p>
+				<p class="project-note">최근에는 React·TypeScript UI와 Rust·Bevy 런타임, 3D Asset Pipeline까지 개발 영역을 확장했습니다.</p>
+				<div class="project-header-actions">
+					<a class="project-primary-link" href="#featured-projects">대표 프로젝트 보기 <span aria-hidden="true">↓</span></a>
+					<a class="project-link" href={url("/career/")}>핵심 역량과 경력 보기 <span aria-hidden="true">→</span></a>
+				</div>
+			</div>
+			<div class="project-trajectory" role="group" aria-label="개발 경력의 확장 과정">
+				<p>Development journey</p>
+				<ol>
+					<li><span>01</span><strong>Game / VR</strong><small>실시간 3D와 상호작용</small></li>
+					<li><span>02</span><strong>Unreal Editor</strong><small>Timeline과 제작 시스템</small></li>
+					<li><span>03</span><strong>Web + Runtime</strong><small>React·Rust·Bevy</small></li>
+					<li><span>04</span><strong>Asset Pipeline</strong><small>전달 계약과 자동화</small></li>
+				</ol>
+			</div>
 			<div data-filter-controls hidden>
 				<div class="project-search-row">
 					<div class="project-search-field">
@@ -52,8 +118,39 @@ const categories = [
 			</div>
 		</header>
 		<p class="project-result-count" role="status" aria-live="polite" aria-atomic="true" data-result-count>전체 {projects.length}개 프로젝트</p>
-		<div class="project-grid" id="project-results">
-			{projects.map(project => <ProjectCard project={project} />)}
+		<div id="project-results">
+			<section class="project-section" id="featured-projects" data-project-section>
+				<div class="project-section-heading">
+					<div><p class="project-section-kicker">Featured</p><h2>대표 프로젝트</h2></div>
+					<p>최근 경력과 현재의 기술적 판단을 가장 잘 보여주는 제작 도구입니다.</p>
+				</div>
+				<div class="project-feature-grid">
+					{featuredProjects.map((project, index) => {
+						const content = featuredContent[project.id as keyof typeof featuredContent];
+						return content && <FeaturedProjectCard project={project} index={`0${index + 1}`} {...content} />;
+					})}
+				</div>
+			</section>
+
+			<section class="project-section" data-project-section>
+				<div class="project-section-heading">
+					<div><p class="project-section-kicker">Selected experience</p><h2>이어지는 핵심 경험</h2></div>
+					<p>현재의 3D 에디터·제작 도구 개발 역량으로 이어진 프로젝트입니다.</p>
+				</div>
+				<div class="project-grid project-grid-selected">
+					{selectedProjects.map((project) => <ProjectCard project={project} variant="selected" />)}
+				</div>
+			</section>
+
+			<section class="project-section" data-project-section>
+				<div class="project-section-heading">
+					<div><p class="project-section-kicker">More work</p><h2>자동화·게임·VR·기초 기술</h2></div>
+					<p>개발 자동화부터 게임, 시뮬레이션, 장비 연동과 시스템 프로그래밍까지 폭넓게 경험한 작업입니다.</p>
+				</div>
+				<div class="project-grid project-grid-archive">
+					{archiveProjects.map((project) => <ProjectCard project={project} variant="archive" />)}
+				</div>
+			</section>
 		</div>
 		{projects.length === 0 && <div class="card-base project-empty"><h2>등록된 프로젝트가 없습니다</h2><p>새 프로젝트를 준비하고 있습니다.</p></div>}
 		<div class="card-base project-empty" data-no-results hidden>
