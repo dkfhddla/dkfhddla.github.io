@@ -117,6 +117,16 @@ class ProjectGallery extends HTMLElement {
 			card.hidden = !matches;
 			if (matches) count++;
 		}
+		for (const section of this.querySelectorAll<HTMLElement>(
+			"[data-project-section]",
+		)) {
+			const sectionCards = section.querySelectorAll<HTMLElement>(
+				"[data-project-card]",
+			);
+			section.hidden =
+				sectionCards.length > 0 &&
+				![...sectionCards].some((card) => !card.hidden);
+		}
 		for (const button of this.querySelectorAll<HTMLButtonElement>(
 			"button[data-category]",
 		)) {
