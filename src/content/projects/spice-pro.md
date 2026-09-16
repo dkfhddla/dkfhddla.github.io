@@ -1,13 +1,16 @@
 ---
 title: "Spice Pro"
-description: "배경과 컷 템플릿으로 장면을 구성하고, 캐릭터 외형·동작·표정과 카메라를 편집하는 Unreal Engine 5 기반 3D 영상 제작 도구입니다. 캐릭터 커스터마이징부터 스토리보드의 컷 편집과 렌더링까지 이어지는 제작 흐름을 제공합니다."
+description: "Unreal Engine 5 기반 3D 영상 제작 도구입니다. 런타임 Timeline·Action 시스템과 캐릭터 커스터마이징 UI를 개발하고, ViewModel로 화면과 기능 코드의 책임을 나눴습니다."
 category: "3D 콘텐츠 제작 도구"
 engagement: "company"
 organization: "시나몬"
 order: 105
 image: "/assets/projects/spice-pro/actor-path.webp"
-tags: ["Unreal Engine 5", "Character Customization", "Storyboard", "Animation", "Camera", "Timeline"]
+tags: ["Unreal Engine 5", "C++", "Character Customization", "Storyboard", "Animation", "Camera", "Timeline"]
 ---
+
+**역할:** 런타임 Timeline·Action 시스템, 캐릭터 커스터마이징 UI·ViewModel 개발\
+**환경:** Unreal Engine 5, C++, Sequence, UMG, Blueprint, ViewModel, Perforce
 
 ## 어떤 도구인가요?
 
@@ -17,7 +20,7 @@ Unreal Engine의 Sequence를 활용해 **런타임에서 편집할 수 있도록
 
 제작의 기본 단위인 컷(Cut)은 영화의 한 샷에 해당합니다. 하나의 컷에 카메라와 배우의 애니메이션을 담고, 스토리보드에서 여러 컷과 씬을 관리합니다. 완성한 컷을 템플릿으로 저장해 다른 장면에도 활용할 수 있습니다.
 
-이 페이지는 당시 사용 가이드와 기획 자료를 바탕으로 Spice Pro의 기능과 제작 과정을 소개합니다. 이후 이어진 제작 도구는 [CineV Studio](/projects/cinevstudio/)에서 볼 수 있습니다.
+이 페이지는 당시 사용 가이드와 기획 자료를 바탕으로 Spice Pro의 기능과 제작 과정을 소개합니다. 이후 담당한 편집 시스템 개발 경험은 [CineV Studio](/projects/cinevstudio/)에서 볼 수 있습니다.
 
 ## 담당 역할과 주요 작업
 

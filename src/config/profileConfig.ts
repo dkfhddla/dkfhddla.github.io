@@ -3,7 +3,7 @@ import type { ProfileConfig } from "../types/profileConfig";
 export const profileConfig: ProfileConfig = {
 	avatar: "/assets/images/jacob-profile.png",
 	name: "Jacob",
-	bio: "제품과 실시간 3D 도구를 만들며 배운 판단을 기록합니다.",
+	bio: "Unreal Engine·C++ 기반 3D 콘텐츠 제작 도구 개발자. 편집 시스템과 웹·Rust 엔진을 연결합니다.",
 	links: [
 		{
 			name: "GitHub",
