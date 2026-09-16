@@ -1,19 +1,19 @@
 ---
 title: "Shotloom"
-description: "스토리보드의 샷을 3D 장면으로 열어 캐릭터·동작·카메라를 연출하고 영상 생성으로 이어가는 제작 도구입니다. Codex를 활용해 React와 Rust·Bevy를 연결하고, 편집·저장·렌더링의 일관성을 검증했습니다."
+description: "React·TypeScript UI와 Rust·Bevy 엔진을 연결하는 3D 제작 도구입니다. Viewport·Camera·Timeline·Pose·IK 편집과 자산 연동을 구현하고, 상태 소유권과 저장·Undo·출력의 일관성을 검증했습니다."
 category: "3D 콘텐츠 제작 도구"
 engagement: "company"
 organization: "시나몬"
-period: "2026.04 ~ 2026.08"
-order: 100
+period: "2026.04 ~ 2026.09"
+order: 120
 image: "/assets/projects/shotloom/brand-cover.webp"
 detailImage: "/assets/projects/shotloom/scene-editor.webp"
-tags: ["Codex","AI 에이전틱 개발","React","TypeScript","Rust","Bevy","IK"]
+tags: ["React","Rust","TypeScript","Bevy","Timeline","Camera","IK","Codex"]
 ---
 
-**기간:** 2026.04 ~ 2026.08\
+**기간:** 2026.04 ~ 2026.09 (활동 기록 기준)\
 **역할:** 웹 UI·엔진 연동, 뷰포트·카메라 편집, 작업물 저장·렌더링, Clip Pose·IK 개발\
-**환경:** Codex, React, TypeScript, Rust, Bevy Engine, Timeline, Camera, IK, CLI
+**환경:** React, TypeScript, Rust, Bevy Engine, Typed Bridge, Timeline, Camera, IK, CLI
 
 ## 어떤 도구인가요?
 
@@ -93,16 +93,18 @@ React의 입력 처리와 명령·이벤트 브리지를 Rust·Bevy 런타임에
 
 ### 클립별 자세 편집과 손발 IK
 
-수동으로 수정한 자세가 각 Performance Clip에 저장되도록 소유권을 옮겼습니다. 같은 원본 자세를 공유하는 인접 클립도 수정 내용이 섞이지 않고 독립적으로 편집되도록 구성했습니다.
+캐릭터에 공통으로 남던 수동 자세는 클립을 전환할 때 다른 동작에 영향을 줄 수 있었습니다. 수동으로 수정한 자세가 각 Performance Clip에 저장되도록 소유권을 옮겨, 같은 원본 자세를 공유하는 인접 클립도 독립적으로 편집되도록 구성했습니다.
 
 양손과 양발의 목표 위치에 맞춰 관절을 계산하는 **IK**를 연결하고, 뷰포트의 이동·회전 핸들로 손발의 위치와 방향을 조정할 수 있게 했습니다. 활성 클립과 동작 취소 판단은 실제 자세를 계산하는 런타임이 담당하도록 중복 로직을 정리했습니다.
 
+편집 중 미리보기와 확정된 저장 상태를 나누고, 조작의 확정·취소와 Undo/Redo를 연결했습니다. 자동 테스트로 상태 직렬화와 엔진 평가, 다시 열기·미리보기·PNG 출력의 일관성을 확인했습니다.
+
 ## AI를 활용한 개발과 검증
 
-CinevStudio에서 4년 6개월 동안 축적한 제작 도구 개발 경험을 바탕으로, 필요한 기능과 모듈 구조를 다시 정의하고 Codex를 활용해 구현을 진행했습니다. React와 Rust·Bevy 사이의 연결, 상태 소유권, 저장과 복구를 주요 검토 대상으로 삼았습니다.
+Unreal 기반 제작 도구에서 축적한 개발 경험을 바탕으로, 필요한 기능과 모듈 구조를 정의하고 Codex를 구현 보조 도구로 활용했습니다. React와 Rust·Bevy 사이의 연결, 상태 소유권, 저장과 복구를 주요 검토 대상으로 삼았습니다.
 
 AI 에이전트가 작성한 코드는 직접 실행해 사용자 조작부터 엔진 평가와 저장 결과까지 확인했습니다. 중복된 책임과 모듈 경계를 검토하고, 재생·실행 취소·다시 열기에서도 같은 결과가 유지되는지 검증하며 구조를 개선했습니다. 제품의 AI 동작·영상 생성 기능과 별개로, 이 과정이 제가 수행한 **AI 활용 개발과 품질 검증 경험**입니다.
 
-개인 기여는 병합과 검증이 확인된 범위를 중심으로 정리했으며, 2026년 8월 기록 당시 자세 편집의 일부 후속 작업은 진행 중이었습니다.
+개인 기여는 2026년 9월까지의 구현·병합·검증 기록을 기준으로 정리했습니다. 자동 테스트로 확인한 결과와 실제 사용자 환경의 검증, 배포·제품 반영은 구분합니다.
 
 관련 글: [Shotloom의 발전 과정과 개인 기여](/posts/shotloom-project-history/) · [나는 Codex 발사대가 된 걸까](/posts/am-i-a-codex-launcher/)
