@@ -67,9 +67,9 @@ Studio 1.4 팀 릴리즈 시연입니다. 현재 캐릭터와 전체 트랙 사�
 
 <figure>
   <a class="project-detail-cover no-styling" href="/assets/projects/cinevstudio/timeline-boundary-diagram.svg" data-no-swup data-fancybox="cinevstudio-diagrams" data-type="image" aria-label="시간 경계와 화면 위치 도식 확대 보기">
-    <img src="/assets/projects/cinevstudio/timeline-boundary-diagram.svg" alt="시간축에서는 샷 A의 끝과 샷 B의 시작이 같은 프레임이지만, 화면에서는 꼬리·여백·다음 샷 헤더를 사이에 두고 서로 다른 위치가 됩니다." width="400" height="466" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; margin: 0;">
+    <img src="/assets/projects/cinevstudio/timeline-boundary-diagram.svg" alt="시간축에서 맞닿은 Shot A의 끝과 Shot B의 시작은 화면에서 고정 폭의 꼬리·여백·헤더만큼 떨어집니다. 재생 구간만 줌에 따라 길이가 변하므로 프레임·줌 외에 경계가 속한 샷도 판단합니다." width="400" height="584" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; margin: 0;">
   </a>
-  <figcaption>샷 경계의 개념도입니다. 같은 프레임도 앞 샷의 끝인지 다음 샷의 시작인지 함께 구분해 화면 위치를 계산합니다. 이미지를 선택하면 확대할 수 있습니다.</figcaption>
+  <figcaption>핵심 관계를 단순화한 개념도입니다. 폭·배치는 실제 비율이 아니며, 빗금 영역은 재생 시간을 차지하지 않는 고정 폭 UI입니다. 선택하면 확대할 수 있습니다.</figcaption>
 </figure>
 
 ### 편집 단위에 맞춰 복구하고 경계 조건 검토
@@ -101,6 +101,13 @@ UMG 위젯은 다음 기준으로 구성했습니다. 실제 위젯 구성을 �
 - **Base:** 기본 외형·구조와 입력 이벤트 전달을 담당합니다.
 - **Component:** 노출된 속성으로 디자인 변형과 프리셋을 조정합니다.
 - **View:** 위젯을 조합하고 C++ 편집 동작과 ViewModel을 연결합니다.
+
+<figure>
+  <a class="project-detail-cover no-styling" href="/assets/projects/cinevstudio/ui-responsibility-diagram.svg" data-no-swup data-fancybox="cinevstudio-diagrams" data-type="image" aria-label="UI 상태 책임 분리 전후 도식 확대 보기">
+    <img src="/assets/projects/cinevstudio/ui-responsibility-diagram.svg" alt="변경 전에는 화면 표시·제어가 Widget에 집중되고 Model이 ViewModel을 생성·소유했습니다. 변경 후에는 View가 위젯 조합·편집 동작과 필요한 ViewModel 관리를 맡고 Model을 연결하며, Component의 노출 속성에서 디자인을 조정합니다." width="400" height="810" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; margin: 0;">
+  </a>
+  <figcaption>핵심 관계를 단순화한 개념도입니다. 실선 화살표는 생성·소유 또는 관리, 점선은 데이터 연결을 뜻합니다. 전체 상속 구조나 모든 UI 의존성의 제거를 의미하지 않습니다. 선택하면 확대할 수 있습니다.</figcaption>
+</figure>
 
 이 구조를 적용하며 Timeline·Track 위젯과 데이터 모델을 연결하고, 캐릭터 생성·삭제 갱신, 트랙 선택 연동과 세로 스크롤 동기화를 구현했습니다. 디자이너는 Component의 속성으로 외형을 조정하고, 복잡한 위젯 구성은 프로젝트 설정에서 관리할 수 있도록 수정 경로를 마련했습니다.
 
