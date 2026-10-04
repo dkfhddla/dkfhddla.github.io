@@ -24,7 +24,7 @@ CineV Studio는 캐릭터와 소품을 배치하고 동작·카메라·조명을
 
 **문제:** 샷 사이에는 고정 폭의 UI 영역이 있지만 타임라인 시간은 줌에 따라 달라집니다. 경계를 드래그할 때 화면 위치만으로 계산하면 앞 샷의 끝과 다음 샷의 시작을 구분하기 어려웠습니다. 클립 이동·트림·리플에서는 주변 클립과 샷 범위도 함께 바뀝니다.
 
-**본인 기여와 기술 구조:** 고정 폭 영역을 반영한 프레임·화면 좌표 변환을 공통화하고, 같은 시간 경계에서도 앞 샷 끝과 다음 샷 시작의 화면 위치를 구분해 처리했습니다. ShotBand와 범위 조정, 클립 이동·트림과 Undo/Redo를 연결했습니다. Shot 간 리플 편집은 동료와 공동 개발했습니다.
+**본인 기여와 기술 구조:** 고정 폭 영역을 반영한 프레임·화면 좌표 변환을 공통화하고, 같은 시간 경계에서도 앞 샷 끝과 다음 샷 시작의 화면 위치를 구분해 처리했습니다. ShotBand와 범위 조정, 클립 이동·트림과 Undo/Redo를 연결했습니다. Shot 간 리플의 기초를 직접 구현한 뒤 동료와 함께 기능을 확장했습니다.
 
 **확인된 결과:** 샷 경계의 드래그가 공통 좌표 기준을 사용하고, 편집 범위를 사용자가 선택하는 리플 동작으로 확장했습니다. 한 편집으로 변경된 상태를 Undo/Redo에서 함께 복원하도록 다뤘습니다.
 
@@ -37,9 +37,11 @@ CineV Studio는 캐릭터와 소품을 배치하고 동작·카메라·조명을
 
 ## UI와 편집 상태의 책임 나누기
 
-**문제:** 화면 표시와 데이터 변경의 책임이 섞이면 클립 위치만 바뀌거나, 공통 함수가 로드 중에도 재생 위치를 바꾸는 등 호출 경로에 따라 동작이 달라질 수 있었습니다.
+**문제:** 화면 표시와 데이터 변경의 책임이 섞이면 클립 위치만 바뀌거나, 공통 함수가 로드 중에도 재생 위치를 바꾸는 등 호출 경로에 따라 동작이 달라질 수 있었습니다. 데이터 모델이 ViewModel을 직접 생성·소유하던 구조도 있어 데이터와 화면의 의존성이 얽혀 있었습니다.
 
-**본인 기여:** 새 UI 시스템의 Scene Editor 적용과 Timeline 위젯을 구현하고, Base·Component·View와 C++·Blueprint 연결 가이드를 정리했습니다. Base는 외형·입력 전달, Component는 디자인 변형, View는 위젯 조합과 편집 동작을 맡는 구조입니다. UI System은 공동 설계·구축 범위입니다.
+**본인 기여:** Unreal Engine의 CommonUI를 참고해 CineV Studio의 편집 흐름에 맞는 UI System을 공동 설계·구축했습니다. Scene Editor 적용과 Timeline 위젯 구현을 담당하고, View가 필요한 ViewModel을 관리하며 데이터 모델을 연결하도록 정리했습니다.
+
+Base는 외형·입력 전달, Component는 디자인 변형, View는 위젯 조합과 편집 동작을 맡는 구조입니다. 이 구분과 C++·Blueprint 연결 방법을 가이드로 정리했습니다.
 
 동료 코드리뷰에서는 화면 위치를 직접 바꾸는 대신 **클립 데이터 변경 → 변경 이벤트 → UI 갱신**을 사용하도록 제안했습니다. 샷 추가 뒤 재생 위치 이동은 사용자 편집 호출부가 맡도록 분리했습니다. 카메라 생성 중과 편집 중의 데이터 차이, 약한 참조와 종료 시 미리보기 정리도 검토했습니다.
 
@@ -54,6 +56,8 @@ CineV Studio는 캐릭터와 소품을 배치하고 동작·카메라·조명을
 **본인 기여:** 기존 파일을 백업하고 저장 실패를 감지하면 복원하거나 새 파일을 정리하는 처리를 구현했습니다. 모든 저장 단계가 끝난 뒤 성공을 기록하고 생성·수정 버전을 추적했습니다. 동료의 JSON 복구·파일 이동 검사·버전 비교 보강은 리뷰하고 통합했습니다.
 
 Commandlet에서 Gaussian 배경이 빠지는 문제에는 렌더링 전 월드·FXSystem 상태를 확인하고, 필요한 경우에만 생성·연결하도록 보완했습니다. 준비 실패는 출력 실패로 처리하고 초기화 조건을 검사하는 Unreal Automation 테스트 코드를 추가했습니다.
+
+씬 편집 Commandlet과 샷 수정 기능은 동료와 함께 구현했습니다. 셰이더 캐시 예열에는 진행 로그·단계별 제한 시간·실패 원인 로그를 추가했고, 영상 출력에서는 PNG 시퀀스를 유지하면서 MP4 인코딩을 선택하도록 분리했습니다.
 
 **확인된 결과:** 감지된 저장 실패의 복구 경로와 출력 초기화의 성공·실패 조건을 명시했습니다. 저장 복구는 파일별 백업·복원이며, 강제 종료에서도 보장되는 원자적 저장으로 설명하지 않습니다.
 
@@ -71,7 +75,7 @@ WANDR·PoseToPose를 Unreal 편집기에 연결하며 NNE 모델 생성·입력 
 
 아래는 CINEV 공식 **3D Edit Deep Dive**입니다. 캐릭터 배치부터 동작·카메라 편집까지 제품 전체 흐름을 보여 줍니다.
 
-<iframe src="https://player.vimeo.com/video/1177171671" title="CINEV 공식 3D Edit Deep Dive" width="1280" height="608" loading="lazy" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="width:100%;height:auto;aspect-ratio:1280/608;border:0;"></iframe>
+<iframe src="https://player.vimeo.com/video/1177171671?dnt=1" title="CINEV 공식 3D Edit Deep Dive" width="1280" height="608" loading="lazy" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="width:100%;height:auto;aspect-ratio:1280/608;border:0;"></iframe>
 
 [Vimeo 원본](https://vimeo.com/1177171671) · [YouTube 튜토리얼](https://www.youtube.com/watch?v=GKxlZUpQN44)
 
