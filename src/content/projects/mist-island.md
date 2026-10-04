@@ -3,7 +3,9 @@ title: "Mist Island"
 description: "소리·빛·냄새의 흔적을 AI가 감지해 플레이어를 추적하는 게임입니다. 인벤토리·아이템 상호작용과 흔적 시스템을 구현하고 PM·레벨 설계를 담당했습니다."
 category: "게임 프로젝트"
 engagement: "personal"
-period: "2015 ~ 2016"
+period: "2014–2016 개인·팀 작업 중"
+role: "게임 기능·아이템·레벨 개발·팀 일정 관리"
+delivery: "개인·팀 개발 기록"
 order: 30
 image: "/assets/projects/mist-island/hospital-layout.webp"
 tags: ["Unreal Engine","Blueprint","인벤토리","AI 추적","레벨 설계"]
@@ -12,7 +14,7 @@ link:
     value: "https://youtu.be/Qala_SuONKI"
 ---
 
-**기간:** 2015 ~ 2016
+**기간:** 2014–2016 개인·팀 작업 중, 정확한 개발 기간 미확정\
 
 **역할:** 콘텐츠 프로그래밍, PM, 레벨 설계\
 **환경:** Unreal Engine, Blueprint, HUD, Physics Handle, Matinee

@@ -1,0 +1,54 @@
+---
+import "@/styles/portfolio.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+const {
+	title = "심현보 · 3D 제작 도구 개발자",
+	description = "Unreal Engine·C++ 3D 제작 도구 개발자 심현보의 경력과 포트폴리오. Timeline·Camera·Animation부터 React·Rust·Bevy 편집기까지.",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, "https://dkfhddla.github.io");
+const links = [
+	{ href: "/projects/", label: "프로젝트" },
+	{ href: "/career/", label: "경력" },
+	{ href: "/notes/", label: "개발 기록" },
+];
+---
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" href="/favicon/jacob.svg" type="image/svg+xml" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:image" content="https://dkfhddla.github.io/assets/projects/cinevstudio/action-timeline.webp" />
+		<meta name="theme-color" content="#f6f5f1" />
+	</head>
+	<body class="portfolio">
+		<a class="skip-link" href="#main">본문으로 이동</a>
+		<header class="site-header">
+			<div class="shell header-inner">
+				<a class="wordmark" href="/" aria-label="심현보 포트폴리오 홈"><span class="brand-mark" aria-hidden="true">H.</span>심현보<span class="wordmark-sub">DEVELOPER</span></a>
+				<nav aria-label="주 메뉴">
+					{links.map(({ href, label }) => <a href={href} aria-current={Astro.url.pathname.startsWith(href) ? "page" : undefined}>{label}</a>)}
+					<a href="/#contact">연락처 <span aria-hidden="true">↗</span></a>
+				</nav>
+			</div>
+		</header>
+		<main id="main" class="shell" tabindex="-1" data-pagefind-body><slot /></main>
+		<footer class="site-footer shell">
+			<p>심현보 <span>·</span> 3D 제작 도구 개발자</p>
+			<div><a href="mailto:dkfhddla@naver.com">Email ↗</a><a href="https://github.com/dkfhddla">GitHub ↗</a><a href="/about/">소개</a></div>
+			<p class="footer-note">편집의 경험을, 예측 가능한 동작으로.</p>
+		</footer>
+	</body>
+</html>

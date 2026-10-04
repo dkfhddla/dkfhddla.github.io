@@ -5,6 +5,8 @@ category: "VR·AR 체험 콘텐츠"
 engagement: "company"
 organization: "보라브이알"
 period: "2017.12 ~ 2018.01"
+role: "Unity·C# 콘텐츠 동작 프로세스 개발"
+delivery: "콘텐츠 개발 기록"
 order: 58
 image: "/assets/projects/diamond-city-ar/architecture.webp"
 tags: ["Unity", "C#", "AR", "건축 시각화"]

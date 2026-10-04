@@ -5,6 +5,8 @@ category: "VR 플랫폼과 시뮬레이터"
 engagement: "company"
 organization: "보라브이알"
 period: "2017.11 ~ 2018.03"
+role: "클라이언트·장비 입력·게임 진행 개발"
+delivery: "시연·테스트 기록"
 order: 60
 image: "/assets/projects/cricket-hero/game-development.webp"
 tags: ["Unreal Engine 4","게임 AI","장비 입력"]

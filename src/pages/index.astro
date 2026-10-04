@@ -1,0 +1,47 @@
+---
+import WorkCard from "@/components/portfolio/WorkCard.astro";
+import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import { getSortedProjects } from "@/utils/projects-utils";
+
+const projects = await getSortedProjects();
+const selected = ["cinevstudio", "shotloom", "spice-pro", "adas-simulator"]
+	.map((id) => projects.find((project) => project.id === id))
+	.filter((project) => project !== undefined);
+---
+<PortfolioLayout>
+	<section class="hero" aria-labelledby="intro-title">
+		<div class="hero-copy">
+			<p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> REALTIME 3D · TOOLS · INTERACTION</p>
+			<h1 id="intro-title">창작자의 의도를<br />움직이는 장면으로.</h1>
+			<p class="hero-name">3D 제작 도구 개발자 <strong>심현보</strong>입니다.</p>
+			<p class="hero-description">약 8년의 개발 경력을 바탕으로, Unreal Engine·C++ 제작 도구의 타임라인·카메라·캐릭터 편집을 연결해 왔습니다. 최근에는 React·TypeScript와 Rust·Bevy로 브라우저 안의 3D 편집 경험을 만듭니다.</p>
+			<div class="hero-actions"><a class="button primary" href="#selected-work">대표 프로젝트 <span aria-hidden="true">↓</span></a><a class="button secondary" href="/career/">경력 살펴보기 <span aria-hidden="true">↗</span></a></div>
+		</div>
+		<figure class="hero-visual">
+			<div class="visual-topline"><span>FROM TIMELINE TO SCENE</span><span aria-hidden="true">01 / 3D EDITOR</span></div>
+			<a href="/projects/cinevstudio/" aria-label="CineV Studio 프로젝트 보기"><img src="/assets/projects/cinevstudio/action-timeline.webp" alt="CineV Studio에서 두 인물의 동작과 대사를 타임라인에 배치한 실제 제품 화면" width="1280" height="720" fetchpriority="high" /></a>
+			<figcaption><span>CineV Studio</span><span>캐릭터 · 동작 · 카메라를 하나의 편집 흐름으로</span></figcaption>
+		</figure>
+	</section>
+	<div class="expertise-strip" aria-label="주요 개발 분야"><span>Unreal Engine / C++</span><span>Timeline & Camera</span><span>Action & Interaction</span><span>React / Rust / Bevy</span></div>
+	<section class="section" id="selected-work" aria-labelledby="work-title">
+		<div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 대표 프로젝트</p><h2 id="work-title">편집의 문제를 풀어 온 작업들</h2></div><a class="text-link" href="/projects/">전체 프로젝트 <span aria-hidden="true">↗</span></a></div>
+		<p class="section-intro">화면의 조작부터 상태·저장·출력까지. 직접 맡은 역할과 기술적 판단을 중심으로 정리했습니다.</p>
+		<div class="work-grid">{selected.map((project, index) => <WorkCard project={project} number={index + 1} />)}</div>
+		<a class="supporting-work" href="/projects/asset-library/"><span class="eyebrow">CONNECTED WORK</span><span><strong>Shotloom Asset Library</strong> — 에셋 목록부터 검증된 파일 전달까지</span><span aria-hidden="true">↗</span></a>
+	</section>
+	<section class="section career-section" aria-labelledby="journey-title">
+		<div class="section-heading"><div><p class="eyebrow">CAREER / 경력의 흐름</p><h2 id="journey-title">게임·VR에서, 창작 도구로</h2></div><a class="text-link" href="/career/">경력 상세 <span aria-hidden="true">↗</span></a></div>
+		<div class="journey">
+			<article><p class="journey-date">2021.07–2026.08</p><h3>시나몬</h3><p class="journey-role">3D 콘텐츠 제작 도구 개발</p><p>SpicePro → CineV Studio → Shotloom.<br />Unreal 편집 시스템에서 웹 UI·Rust 엔진·자산 전달까지 담당 범위를 넓혔습니다.</p><a href="/career/#cinnamon">담당 경험 보기 ↗</a></article>
+			<article><p class="journey-date">2019.01–2019.10</p><h3>SOUL X</h3><p class="journey-role">프리랜서 개발</p><p>AWS Sumerian 가상 홈쇼핑과 Unreal 교통 시스템. 가상 공간의 상호작용과 재사용 가능한 도구를 개발했습니다.</p><a href="/career/#soulx">담당 경험 보기 ↗</a></article>
+			<article><p class="journey-date">2017.01–2018.12</p><h3>보라VR</h3><p class="journey-role">VR·시뮬레이터·게임 개발</p><p>Monopic 공간 편집기, ADAS 시뮬레이터, 스포츠 게임과 VR·AR 체험. 장비·데이터와 실시간 3D를 연결했습니다.</p><a href="/career/#boravr">담당 경험 보기 ↗</a></article>
+		</div>
+		<p class="small-note">Shotloom은 퇴사 후 2026년 9월 둘째 주까지 마무리에 추가 참여했습니다. 시나몬 재직 기간과 구분합니다.</p>
+	</section>
+	<section class="section approach" aria-labelledby="approach-title">
+		<div><p class="eyebrow">HOW I WORK / 개발과 검증</p><h2 id="approach-title">조작의 끝까지<br />같은 결과를 만들기.</h2><p>사용자가 한 편집이 재생·실행 취소·다시 열기·출력에서도 이어지도록 책임과 상태의 경계를 살핍니다.</p></div>
+		<ol class="principles"><li><span>01</span><div><h3>문제를 실행 가능한 범위로</h3><p>요구사항을 입력·상태·소유권·입출력 계약으로 구체화하고, 검증할 수 있는 작업으로 나눕니다.</p></div></li><li><span>02</span><div><h3>화면과 엔진 사이의 책임을 분명하게</h3><p>UI 표시, 데이터 변경, 엔진 평가를 구분합니다. 공동 설계·직접 구현·리뷰 기여도 각각 설명합니다.</p></div></li><li><span>03</span><div><h3>AI 구현도 실행과 리뷰로 확인</h3><p>Codex·MCP로 요구사항과 구현을 연결하고, 계약 점검·자동 테스트·직접 조작과 동료 리뷰로 결과를 검토합니다.</p></div></li></ol>
+	</section>
+	<section class="contact-section" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">CONTACT</p><h2 id="contact-title">함께 만들 이야기가 있다면.</h2><p>3D 제작 도구, 편집 시스템과 개발 경험에 대한 이야기를 나눕니다.</p></div><div class="contact-links"><a href="mailto:dkfhddla@naver.com">dkfhddla@naver.com <span aria-hidden="true">↗</span></a><a href="https://github.com/dkfhddla">github.com/dkfhddla <span aria-hidden="true">↗</span></a></div></section>
+</PortfolioLayout>

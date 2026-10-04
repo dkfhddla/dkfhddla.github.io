@@ -1,110 +1,75 @@
 ---
 title: "Shotloom"
-description: "React·TypeScript UI와 Rust·Bevy 엔진을 연결하는 3D 제작 도구입니다. Viewport·Camera·Timeline·Pose·IK 편집과 자산 연동을 구현하고, 상태 소유권과 저장·Undo·출력의 일관성을 검증했습니다."
+description: "React UI와 Rust·Bevy 엔진을 연결한 브라우저 3D 편집기. 클립별 Pose·IK와 시간 규칙을 정리해 저장·Undo·출력의 일관성을 검증했습니다."
 category: "3D 콘텐츠 제작 도구"
 engagement: "company"
 organization: "시나몬"
-period: "2026.04 ~ 2026.09"
+period: "2026.04–2026.09 둘째 주"
+role: "Viewport·Camera·Timeline·Pose·IK, UI·엔진 연동"
+delivery: "사내 테스트·테스트 빌드"
 order: 120
-image: "/assets/projects/shotloom/brand-cover.webp"
-detailImage: "/assets/projects/shotloom/scene-editor.webp"
-tags: ["React","Rust","TypeScript","Bevy","Timeline","Camera","IK","Codex"]
+image: "/assets/projects/shotloom/scene-editor.webp"
+tags: ["React", "TypeScript", "Rust", "Bevy", "Timeline", "Camera", "IK", "Codex", "MCP"]
 ---
 
-**기간:** 2026.04 ~ 2026.09 (활동 기록 기준)\
-**역할:** 웹 UI·엔진 연동, 뷰포트·카메라 편집, 작업물 저장·렌더링, Clip Pose·IK 개발\
-**환경:** React, TypeScript, Rust, Bevy Engine, Typed Bridge, Timeline, Camera, IK, CLI
+## 프로젝트 맥락과 역할
 
-## 어떤 도구인가요?
+CineV Studio의 Pixel Streaming 제공 방식에는 로딩·재접속 대기, UI 지연과 서버 비용 부담이 있었습니다. Shotloom은 Unreal 기반 실행을 브라우저 안에서 동작하는 Bevy 엔진과 React UI로 전환하는 방향으로 시작했습니다.
 
-Shotloom은 하나의 촬영 단위인 **Shot**을 중심으로 캐릭터와 소품을 배치하고, 타임라인에서 동작과 카메라를 편집하는 3D 제작 도구입니다. CineV 스토리보드에서 만든 샷을 3D 장면으로 열거나, 편집기에서 직접 장면을 구성할 수 있습니다.
+이미지 기반 3D 씬의 캐릭터·동작·포즈·카메라를 편집하고, 출력한 시퀀스를 AI 재생성에 연결하는 도구입니다. 본인은 Viewport·Camera·Timeline·Animation, Clip Pose·손발 IK와 에셋 연동·작업물 저장·렌더링 경로를 담당했습니다. AI 생성 모델 자체를 개발한 것은 아닙니다.
 
-생성된 초안을 사람이 원하는 구도와 동작으로 다듬고, 다시 영상 생성과 다음 장면 제작에 활용하는 흐름을 제공합니다. 아래는 제품의 제작 흐름이며, 제가 직접 맡은 개발 범위는 뒤에서 구분해 소개합니다.
+**참여 기간은 2026년 4월부터 9월 둘째 주까지**입니다. 시나몬 재직은 8월 31일 종료됐으며, 이후 약 2주간 구현 마무리에 추가 참여했습니다. 사내 테스트 후 테스트 빌드까지 확인했고, 정식 출시·외부 고객 이용은 확인하지 않았습니다.
 
-## 프로젝트 영상
+## 웹 입력을 엔진의 편집 동작으로
 
-### SceneGen 생성 결과
+**문제:** React 화면과 엔진이 각각 선택·재생·취소 상태를 판단하면 같은 조작이 서로 다른 결과를 만들 수 있습니다.
 
-3D 장면의 구도를 편집한 뒤 SceneGen으로 생성한 결과입니다. 아래 영상에서 주변 공간이 보이는 구도와 인물의 움직임을 확인할 수 있습니다. (약 5초)
+**본인 기여와 구조:** React·TypeScript 입력을 명령·이벤트 브리지로 Rust·Bevy에 연결했습니다. 뷰포트 이동·회전·확대, 타임라인 재생 위치, 클립 배치와 카메라 키 편집을 구현했습니다. 장면을 둘러보는 카메라와 촬영용 카메라의 역할을 구분하고, 활성 클립과 취소 판단은 실제 자세를 계산하는 런타임이 담당하도록 정리했습니다.
 
-<video controls playsinline preload="none" width="864" height="496" aria-label="SceneGen 생성 결과 영상" style="display: block; width: 100%; height: auto; aspect-ratio: 864 / 496; border-radius: 0.75rem; background: #111;">
-  <source src="/assets/projects/shotloom/scenegen-video.mp4" type="video/mp4" />
-  <a href="/assets/projects/shotloom/scenegen-video.mp4">SceneGen 생성 결과 영상 열기</a>
-</video>
+**확인된 결과:** UI의 조작이 엔진 평가와 연결되고, 사용자가 편집한 장면을 미리 보고 작업물로 저장해 다시 여는 흐름을 구현했습니다. 기존 제공 방식보다 로딩·UI 반응이 좋아졌다는 정성적 확인은 있으나, 임의의 성능 수치를 사용하지 않습니다.
 
-### 포즈·동작·카메라 편집 시연
+## 클립마다 독립적인 Pose와 IK
 
-캐릭터의 포즈와 동작, 카메라 구도를 편집하고 SceneGen 영상 생성으로 이어가는 과정을 담은 시연입니다. (15초)
+**문제:** 캐릭터에 공통으로 남던 수동 자세는 다른 클립을 편집할 때도 영향을 줄 수 있었습니다. 조작 중인 임시 자세를 즉시 저장하면 취소하기도 어려웠습니다.
 
-<video controls playsinline preload="none" width="1280" height="720" poster="/assets/projects/shotloom/scene-editor.webp" aria-label="Shotloom 포즈·동작·카메라 편집 시연 영상" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 0.75rem; background: #111;">
+**본인 기여:** 수동 자세를 각 **Performance Clip이 소유**하도록 구성했습니다. 손발의 위치·방향을 조절하는 IK와 Gizmo를 연결하고, 편집 중 Draft와 확정된 상태를 나눠 적용·취소·Undo/Redo로 이어지게 했습니다.
+
+**확인된 결과:** 같은 원본 자세를 공유하는 인접 클립도 독립적으로 편집하도록 만들었습니다. 상태 직렬화·엔진 평가, 다시 열기·미리보기·PNG 출력이 같은 규칙을 사용하는지 자동 테스트와 직접 조작으로 검증했습니다.
+
+## 원본 모션 시간과 타임라인 시간 분리
+
+**문제:** Trim·Slip·재생 속도를 바꾸면 화면에 보이는 시간과 원본 모션의 시점이 달라집니다. Pose Key가 잘못된 시간 기준에 묶이면 편집 뒤 다른 동작 시점을 수정하게 됩니다.
+
+**본인 기여와 결과:** 원본 모션 시간과 타임라인 시간을 분리하고, 키가 같은 원본 모션 시점을 따라가도록 저장·평가 규칙을 맞췄습니다. 구간 변경, 분수 재생 속도와 Undo/Redo·저장 변환을 회귀 테스트로 다뤘습니다. AI와 진행한 구현·검토 경험이며 모든 코드를 수작업으로 작성한 것으로 설명하지 않습니다.
+
+## 에셋 가져오기와 작업물·출력
+
+Asset Library의 **Catalog → Resolver → 파일** 계약에 맞춰 에셋을 조회하고 씬에 배치하는 편집기 측 기능을 담당했습니다. 원본 에셋과 썸네일을 작업물에 보존하고, 저장한 작업물을 CLI에서 이미지로 렌더링하는 경로를 연결했습니다.
+
+편집기의 자산 소비와 공급 시스템 개발은 연결돼 있지만 책임이 다릅니다. [Asset Library 프로젝트](/projects/asset-library/)에서 공급·게시·검증 구조를 설명합니다.
+
+## AI 개발에서 맡은 판단과 검증
+
+개발자 4명의 팀에서 Codex 구현 → Claude 리뷰 → 동료 리뷰를 공통 절차로 사용했습니다. 본인은 요구사항을 구체화하고 이슈를 나누며, 계약·모듈 경계와 리뷰 결과를 검토했습니다. 자동 테스트를 기본으로 하고 직접 조작도 수행했습니다.
+
+Ouroboros MCP의 인터뷰로 빠진 요구사항과 구현 방향을 정리했습니다. Slack·GitHub·Linear·Notion MCP로 설계 공유, PR·리뷰, 작업 기록과 문서 작성을 연결했습니다. PR·리뷰 상태 알림 봇도 구성했습니다. 팀 공통 절차의 최초 설계나 조직 전체 생산성 향상을 단독 성과로 주장하지 않습니다.
+
+## 실제 편집 영상과 생성 결과
+
+포즈·동작·카메라 편집에서 영상 생성으로 이어지는 팀 제품 시연입니다. 편집 도구 개발과 AI 모델의 생성 결과를 구분합니다.
+
+<video controls playsinline preload="none" width="1280" height="720" poster="/assets/projects/shotloom/scene-editor.webp" aria-label="Shotloom 실제 포즈·동작·카메라 편집 시연" style="width:100%;height:auto;aspect-ratio:16/9;background:#111;">
   <source src="/assets/projects/shotloom/editing-demo.mp4" type="video/mp4" />
-  <a href="/assets/projects/shotloom/editing-demo.mp4">Shotloom 편집 시연 영상 열기</a>
+  <a href="/assets/projects/shotloom/editing-demo.mp4">편집 시연 영상 열기</a>
 </video>
 
-## 스토리보드에서 3D 연출로
+![캐릭터 동작과 카메라 키를 함께 편집하는 실제 Shotloom 타임라인](/assets/projects/shotloom/camera-keys.webp)
 
-![장면 구성의 출발점이 되는 원본 스토리보드 샷](/assets/projects/shotloom/storyboard.webp)
+아래는 편집한 3D 장면을 바탕으로 SceneGen에서 생성한 결과입니다.
 
-위 원본 샷을 바탕으로 3D 장면을 열고, 페이지 상단의 실제 편집 화면처럼 캐릭터와 카메라를 조정해 다른 구도로 연출합니다. 2D 이미지의 구도를 3D 공간에서 직접 확인하고 수정할 수 있습니다.
+<video controls playsinline preload="none" width="864" height="496" aria-label="SceneGen 생성 결과" style="width:100%;height:auto;aspect-ratio:864/496;background:#111;">
+  <source src="/assets/projects/shotloom/scenegen-video.mp4" type="video/mp4" />
+  <a href="/assets/projects/shotloom/scenegen-video.mp4">생성 결과 영상 열기</a>
+</video>
 
-### 동작 생성과 타임라인 편집
-
-원하는 움직임을 문장으로 입력해 동작 후보를 생성하고 미리 봅니다. 사용할 후보와 대상 캐릭터, 적용 구간을 선택하면 타임라인에 **Performance Clip**으로 추가되어 다른 동작 및 카메라와 함께 편집할 수 있습니다.
-
-[grid]
-![텍스트 프롬프트로 캐릭터 동작을 생성하는 화면](/assets/projects/shotloom/motion-prompt.webp)
-![대상 캐릭터와 적용 구간을 정해 Performance Clip으로 추가하는 화면](/assets/projects/shotloom/performance-clip.webp)
-[/grid]
-
-### 카메라 구도와 움직임 연출
-
-카메라 시점에서 장면을 보며 위치와 회전을 조정하고, 원하는 프레임에 키를 기록합니다. 타임라인의 여러 키로 카메라 이동을 만들며, 화각(FOV)도 별도 키로 저장할 수 있습니다.
-
-![캐릭터 동작과 카메라 위치·회전 키를 같은 타임라인에서 편집하는 화면](/assets/projects/shotloom/camera-keys.webp)
-
-### 영상 생성과 다음 장면으로 연결
-
-편집한 장면에 생성 조건과 참조 이미지를 더해 **SceneGen**으로 영상을 생성합니다. 결과를 확인한 뒤 선택한 영상의 **마지막 프레임 이미지**를 CineV 스토리보드에 추가해 다음 장면 제작에 활용할 수 있습니다.
-
-![편집 장면을 바탕으로 SceneGen 결과를 확인하고 CineV로 보내는 화면](/assets/projects/shotloom/scenegen-result.webp)
-
-작업을 이어갈 파일과 제작 결과는 용도에 맞게 구분됩니다.
-
-| 용도 | 결과물 |
-| --- | --- |
-| 저장 후 다시 편집 | 캐릭터·클립·카메라 키를 다시 불러오는 `.shotloom.zip` 작업물 |
-| 카메라 연출 결과 확인 | 첫·마지막 프레임 PNG와 1920×1080 무음 WebM(VP9) 영상 |
-| SceneGen 생성 | 편집 장면과 생성 조건을 반영한 영상 |
-| CineV 스토리보드로 전달 | 선택한 생성 영상의 마지막 프레임 이미지 |
-
-## 직접 맡은 개발
-
-### 웹 입력을 실제 장면·카메라 편집으로 연결
-
-React의 입력 처리와 명령·이벤트 브리지를 Rust·Bevy 런타임에 연결했습니다. 뷰포트 이동·회전·확대, 타임라인 재생과 재생 위치 조작, 동작 가져오기와 클립 배치, 카메라 편집 및 장면 자산 배치를 구현했습니다.
-
-편집 화면을 둘러보는 카메라와 촬영용 카메라의 책임을 나누고, 입력을 이동·회전·확대 같은 의미로 정리해 런타임에 전달하도록 개선했습니다.
-
-### 저장한 작업물을 다시 열고 렌더링하기
-
-가져온 에셋의 원본 데이터와 썸네일을 작업물에 보존하고, 저장된 작업물을 CLI에서 이미지로 렌더링하는 경로를 연결했습니다. Asset Library v2의 Catalog·Resolver 계약에 맞춰 외부 에셋을 가져오고 검증된 데이터를 저장하는 편집기 측 기능도 담당했습니다.
-
-다시 열기, 실행 취소, 미리보기, PNG 내보내기가 같은 평가 규칙을 사용하도록 검증해 실행 경로마다 편집 결과가 달라지는 문제를 줄였습니다.
-
-### 클립별 자세 편집과 손발 IK
-
-캐릭터에 공통으로 남던 수동 자세는 클립을 전환할 때 다른 동작에 영향을 줄 수 있었습니다. 수동으로 수정한 자세가 각 Performance Clip에 저장되도록 소유권을 옮겨, 같은 원본 자세를 공유하는 인접 클립도 독립적으로 편집되도록 구성했습니다.
-
-양손과 양발의 목표 위치에 맞춰 관절을 계산하는 **IK**를 연결하고, 뷰포트의 이동·회전 핸들로 손발의 위치와 방향을 조정할 수 있게 했습니다. 활성 클립과 동작 취소 판단은 실제 자세를 계산하는 런타임이 담당하도록 중복 로직을 정리했습니다.
-
-편집 중 미리보기와 확정된 저장 상태를 나누고, 조작의 확정·취소와 Undo/Redo를 연결했습니다. 자동 테스트로 상태 직렬화와 엔진 평가, 다시 열기·미리보기·PNG 출력의 일관성을 확인했습니다.
-
-## AI를 활용한 개발과 검증
-
-Unreal 기반 제작 도구에서 축적한 개발 경험을 바탕으로, 필요한 기능과 모듈 구조를 정의하고 Codex를 구현 보조 도구로 활용했습니다. React와 Rust·Bevy 사이의 연결, 상태 소유권, 저장과 복구를 주요 검토 대상으로 삼았습니다.
-
-AI 에이전트가 작성한 코드는 직접 실행해 사용자 조작부터 엔진 평가와 저장 결과까지 확인했습니다. 중복된 책임과 모듈 경계를 검토하고, 재생·실행 취소·다시 열기에서도 같은 결과가 유지되는지 검증하며 구조를 개선했습니다. 제품의 AI 동작·영상 생성 기능과 별개로, 이 과정이 제가 수행한 **AI 활용 개발과 품질 검증 경험**입니다.
-
-개인 기여는 2026년 9월까지의 구현·병합·검증 기록을 기준으로 정리했습니다. 자동 테스트로 확인한 결과와 실제 사용자 환경의 검증, 배포·제품 반영은 구분합니다.
-
-관련 글: [Shotloom의 발전 과정과 개인 기여](/posts/shotloom-project-history/) · [나는 Codex 발사대가 된 걸까](/posts/am-i-a-codex-launcher/)
+[전체 기능 테스트 · YouTube](https://youtu.be/OeyOMw4zknI) · [개발 과정 기록](/posts/shotloom-project-history/) · [AI 개발에 대한 회고](/posts/am-i-a-codex-launcher/)

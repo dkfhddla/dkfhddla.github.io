@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { projectEngagementLabels } from "@/utils/projects-utils";
+
+interface Props {
+	project: CollectionEntry<"projects">;
+	number?: number;
+}
+const { project, number } = Astro.props;
+const {
+	title,
+	description,
+	image,
+	detailImage,
+	category,
+	organization,
+	engagement,
+	period,
+	tags,
+	role,
+	delivery,
+} = project.data;
+const cover = detailImage || image;
+---
+<article class="work-card" data-project data-engagement={engagement} data-search={`${title} ${description} ${organization} ${category} ${tags.join(" ")}`}>
+	<a class="work-link" href={`/projects/${project.id}/`}>
+		<div class:list={["work-image", !cover && "work-image-text"]}>
+			{cover ? <img src={cover} alt={`${title} 실제 프로젝트 화면`} width="1280" height="720" loading="lazy" decoding="async" /> : <span>{category}<strong>{title}</strong></span>}
+			{number && <span class="work-number" aria-hidden="true">{String(number).padStart(2, "0")}</span>}
+			<span class="work-arrow" aria-hidden="true">↗</span>
+		</div>
+		<div class="work-copy">
+			<p class="eyebrow">{organization || projectEngagementLabels[engagement]} <span> / </span> {category}</p>
+			<h3>{title}</h3>
+			<p class="work-description">{description}</p>
+			{role && <p class="work-role"><span>본인 역할</span>{role}</p>}
+			<ul class="tech-tags" aria-label="기술">{tags.slice(0, 4).map(tag => <li>{tag}</li>)}</ul>
+			<p class="work-meta">{period && <span>{period}</span>}{delivery && <span>{delivery}</span>}</p>
+		</div>
+	</a>
+</article>

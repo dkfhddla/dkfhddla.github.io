@@ -119,6 +119,16 @@ export default defineConfig({
 	integrations: [
 		swup({
 			theme: false,
+			// Portfolio pages use a complete document layout; keep native navigation
+			// across that boundary while preserving transitions between blog pages.
+			ignore: (target) => {
+				const path = new URL(target, "https://dkfhddla.github.io").pathname;
+				return (
+					document.body.classList.contains("portfolio") ||
+					path === "/" ||
+					/^\/(?:projects|career|notes|about)(?:\/|$)/.test(path)
+				);
+			},
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
 			// the default value `transition-` cause transition delay
 			// when the Tailwind class `transition-all` is used

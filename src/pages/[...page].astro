@@ -9,7 +9,10 @@ export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
 	// 使用配置中的文章数量
 	const pageSize = siteConfig.pagination.postsPerPage;
-	return paginate(allBlogPosts, { pageSize });
+	// Keep legacy numbered blog URLs; the portfolio owns the homepage.
+	return paginate(allBlogPosts, { pageSize }).filter(
+		(path) => path.params.page,
+	);
 }) satisfies GetStaticPaths;
 // https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 

@@ -123,6 +123,8 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 			.default("unspecified"),
 		organization: z.string().default(""),
 		period: z.string().default(""),
+		role: z.string().default(""),
+		delivery: z.string().default(""),
 		published: z.coerce.date().optional(),
 		order: z.number().default(0),
 		draft: z.boolean().default(false),

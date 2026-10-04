@@ -5,6 +5,8 @@ export type ProjectData = {
 	engagement: "unspecified" | "company" | "freelance" | "personal";
 	organization: string;
 	period: string;
+	role: string;
+	delivery: string;
 	published?: Date;
 	order: number;
 	draft: boolean;

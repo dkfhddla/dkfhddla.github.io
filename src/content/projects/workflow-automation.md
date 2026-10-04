@@ -5,6 +5,8 @@ category: "개발 워크플로 자동화"
 engagement: "company"
 organization: "시나몬"
 period: "2026.05 ~ 2026.07"
+role: "PR·이슈 상태 연결·알림·검증 개발"
+delivery: "병합·검증 기록 · 정량 효과 미측정"
 order: 85
 image: ""
 tags: ["GitHub Actions","GitHub API","Linear","Slack"]
