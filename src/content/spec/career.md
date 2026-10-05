@@ -1,3 +1,5 @@
+# 경력 · 심현보
+
 약 **8년의 개발 경력**을 가진 3D 제작 도구 개발자입니다. Timeline·Camera·Character Animation, Map Editor와 Action·Interaction 시스템을 중심으로 개발했습니다. UI에서 바꾼 값이 엔진의 평가, 저장·복구와 출력까지 같은 의미로 이어지도록 연결합니다.
 
 ## 핵심 경험

@@ -40,17 +40,17 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "심현보 / Portfolio & Notes",
+	title: "Jacob / Dev Notes",
 
 	// 站点副标题
-	subtitle: "3D 제작 도구 · 경력과 개발 기록",
+	subtitle: "Engineering field notes",
 
 	// 站点 URL
 	site_url: "https://dkfhddla.github.io",
 
 	// 站点描述
 	description:
-		"Unreal Engine·C++ 3D 제작 도구 개발자 심현보의 포트폴리오와 개발 기록. React·Rust·Bevy로 편집 경험을 확장합니다.",
+		"실시간 3D 도구, 제품 엔지니어링, AI 협업에서 배운 판단과 검증을 기록하는 Jacob의 기술 블로그.",
 
 	// 站点关键词
 	keywords: [
@@ -113,7 +113,7 @@ export const siteConfig: SiteConfig = {
 			alt: "Jacob",
 		},
 		// 导航栏标题
-		title: "심현보 / Notes",
+		title: "Jacob / Dev Notes",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中

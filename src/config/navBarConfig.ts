@@ -6,15 +6,55 @@ import {
 
 export const navBarConfig: NavBarConfig = {
 	links: [
-		{ name: "홈", url: "/", icon: "material-symbols:home" },
 		{
-			name: "프로젝트",
-			url: "/projects/",
-			icon: "material-symbols:deployed-code",
+			name: "홈",
+			url: "/",
+			icon: "material-symbols:home",
 		},
-		{ name: "경력", url: "/career/", icon: "material-symbols:work" },
-		{ name: "개발 기록", url: "/notes/", icon: "material-symbols:article" },
-		{ name: "연락처", url: "/#contact", icon: "material-symbols:mail" },
+		{
+			name: "글",
+			url: "#",
+			icon: "material-symbols:article",
+			children: [
+				{
+					name: "아카이브",
+					url: "/archive/",
+					icon: "material-symbols:archive",
+				},
+				{
+					name: "카테고리",
+					url: "/categories/",
+					icon: "material-symbols:folder-open-rounded",
+				},
+				{
+					name: "태그",
+					url: "/tags/",
+					icon: "material-symbols:tag-rounded",
+				},
+			],
+		},
+		{
+			name: "포트폴리오",
+			url: "#",
+			icon: "material-symbols:folder-open",
+			children: [
+				{
+					name: "프로젝트",
+					url: "/projects/",
+					icon: "material-symbols:deployed-code",
+				},
+				{
+					name: "경력",
+					url: "/career/",
+					icon: "material-symbols:work",
+				},
+			],
+		},
+		{
+			name: "친구",
+			url: "/friends/",
+			icon: "material-symbols:group",
+		},
 		{
 			name: "GitHub",
 			url: "https://github.com/dkfhddla",
@@ -23,6 +63,7 @@ export const navBarConfig: NavBarConfig = {
 		},
 	],
 };
+
 export const navBarSearchConfig: NavBarSearchConfig = {
 	method: NavBarSearchMethod.PageFind,
 };

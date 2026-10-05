@@ -1,12 +1,26 @@
 ---
 import { getEntry, render } from "astro:content";
-import PortfolioLayout from "@/layouts/PortfolioLayout.astro";
+import Markdown from "@components/common/Markdown.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
 
-const entry = await getEntry("spec", "career");
-if (!entry) throw new Error("Career content not found");
-const { Content } = await render(entry);
+const careerPost = await getEntry("spec", "career");
+
+if (!careerPost) {
+	throw new Error("Career page content not found");
+}
+
+const { Content } = await render(careerPost);
 ---
-<PortfolioLayout title="경력 · 심현보" description="약 8년의 개발 경력. 시나몬, SOUL X, 보라VR에서 3D 편집 시스템·시뮬레이터·VR 클라이언트를 개발한 경험입니다.">
-	<header class="page-intro"><p class="eyebrow">CAREER / 경력</p><h1>실시간 3D를,<br />사람이 다루는 도구로.</h1><p>Unreal Engine·C++를 중심으로 쌓은 제작 도구 경험을<br />React·TypeScript와 Rust·Bevy로 확장하고 있습니다.</p></header>
-	<article class="career-document project-prose"><Content /></article>
-</PortfolioLayout>
+
+<MainGridLayout
+	title="경력"
+	description="Unreal Engine·C++ 기반 3D 콘텐츠 제작 도구 개발자 심현보. Timeline·Camera·Action 편집부터 React·Rust 엔진 연동, 저장·복구와 출력까지의 경력과 대표 프로젝트"
+>
+	<div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<Markdown class="mt-2 [&_h1]:break-keep">
+				<Content />
+			</Markdown>
+		</div>
+	</div>
+</MainGridLayout>
