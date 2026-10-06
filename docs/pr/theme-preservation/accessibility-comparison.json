@@ -1,0 +1,2122 @@
+[
+  {
+    "version": "main",
+    "device": "desktop",
+    "route": "/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            ".tag-item.py-1\\.5[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".pinned-btn > .text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(3) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".px-2\\.5.py-1[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".has-cover.post-card-wrapper.grid-cover-inset:nth-child(2) > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Codex\"]"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Rust\"]"
+          ],
+          [
+            "span[title=\"#Bevy #개발 #AI대필\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Shotloom\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(3)"
+          ],
+          [
+            "span[title=\"#ai대필\"]"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "desktop",
+    "route": "/projects/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "button[data-engagement=\"\"]"
+          ],
+          [
+            "button[data-category=\"\"]"
+          ],
+          [
+            "#featured-projects > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            "li:nth-child(5)"
+          ],
+          [
+            "li:nth-child(6)"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(2) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Yk2ACH2GKaY\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(3) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-cover[aria-label=\"개발 생산성을 위한 워크플로 자동화 상세 보기\"][href$=\"workflow-automation/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"개발 워크플로 자동화\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"자율주행 도구 에셋화 상세 보기\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(5) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(6) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"rrTj0zAE7L0\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"5UnIhwU9jhg\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-cover[aria-label=\"모바일 VR 홈쇼핑 상세 보기\"][href$=\"vr-shopping/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(8) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(9) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Qala_SuONKI\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(10) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(11) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(12) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"bbz7xkBQljI\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"igss9PaePOs\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-category=\"서버 개발\"][data-engagement=\"personal\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "desktop",
+    "route": "/career/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "code"
+          ],
+          [
+            "a[rel=\"noopener noreferrer\"][href$=\"dkfhddla\"][target=\"_blank\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            "a[href$=\"cinevstudio/\"]"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "p:nth-child(4) > a"
+          ],
+          [
+            "a[href$=\"asset-library/\"]"
+          ],
+          [
+            "a[href$=\"vr-shopping/\"]"
+          ],
+          [
+            "a[href$=\"monopic/\"]"
+          ],
+          [
+            "a[href$=\"adas-simulator/\"]"
+          ],
+          [
+            "a[href$=\"cricket-hero/\"]"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "desktop",
+    "route": "/projects/cinevstudio/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".project-engagement-badge"
+          ],
+          [
+            ".project-tags > li:nth-child(1)"
+          ],
+          [
+            ".project-tags > li:nth-child(2)"
+          ],
+          [
+            ".project-tags > li:nth-child(3)"
+          ],
+          [
+            ".project-tags > li:nth-child(4)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href=\"https://vimeo.com/1177171671\"]"
+          ],
+          [
+            "p:nth-child(5) > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+          ],
+          [
+            "section:nth-child(7) > p > code"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(3) > p:nth-child(2) > code:nth-child(1)"
+          ],
+          [
+            "section:nth-child(3) > p:nth-child(2) > code:nth-child(2)"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(1)"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(2)"
+          ],
+          [
+            "th:nth-child(3)"
+          ],
+          [
+            "p:nth-child(3) > code:nth-child(1)"
+          ],
+          [
+            "p:nth-child(3) > code:nth-child(2)"
+          ],
+          [
+            "section:nth-child(8) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(1)"
+          ],
+          [
+            "section:nth-child(8) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(2)"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "targets": [
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container"
+          ],
+          [
+            "section:nth-child(8) > section:nth-child(4) > .horizontal-scroll-container"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "desktop",
+    "route": "/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            ".tag-item.py-1\\.5[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".pinned-btn > .text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(3) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".px-2\\.5.py-1[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".has-cover.post-card-wrapper.grid-cover-inset:nth-child(2) > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Codex\"]"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Rust\"]"
+          ],
+          [
+            "span[title=\"#Bevy #개발 #AI대필\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Shotloom\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(3)"
+          ],
+          [
+            "span[title=\"#ai대필\"]"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "desktop",
+    "route": "/projects/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.font-medium:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "button[data-engagement=\"\"]"
+          ],
+          [
+            "button[data-category=\"\"]"
+          ],
+          [
+            "#featured-projects > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(5)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(6)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(5)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(6)"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(2) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"Shotloom Asset Library 상세 보기\"][href$=\"asset-library/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 자산 파이프라인\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Yk2ACH2GKaY\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(3) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-cover[aria-label=\"개발 생산성을 위한 워크플로 자동화 상세 보기\"][href$=\"workflow-automation/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"개발 워크플로 자동화\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"Unreal 교통 시스템 에셋 상세 보기\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(5) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(6) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"rrTj0zAE7L0\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"5UnIhwU9jhg\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-cover[aria-label=\"모바일 VR 홈쇼핑 상세 보기\"][href$=\"vr-shopping/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"]:nth-child(7) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(8) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(9) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Qala_SuONKI\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(10) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(11) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(12) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"bbz7xkBQljI\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"igss9PaePOs\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-category=\"서버 개발\"][data-engagement=\"personal\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "desktop",
+    "route": "/career/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "th:nth-child(1)"
+          ],
+          [
+            "th:nth-child(2)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href$=\"cinevstudio/\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            "a[href$=\"asset-library/\"]"
+          ],
+          [
+            "a[href$=\"vr-shopping/\"]"
+          ],
+          [
+            "section:nth-child(5) > ul > li:nth-child(2) > strong > a"
+          ],
+          [
+            "a[href$=\"monopic/\"]"
+          ],
+          [
+            "a[href$=\"adas-simulator/\"]"
+          ],
+          [
+            "a[href$=\"cricket-hero/\"]"
+          ],
+          [
+            "a[href$=\"sideungdo/\"]"
+          ],
+          [
+            "a[href$=\"luxury-residence/\"]"
+          ],
+          [
+            "a[href$=\"diamond-city-ar/\"]"
+          ],
+          [
+            "a[href$=\"night-guard/\"]"
+          ],
+          [
+            "a[href$=\"mist-island/\"]"
+          ],
+          [
+            "a[href$=\"shake-it/\"]"
+          ],
+          [
+            "a[href$=\"lethe/\"]"
+          ],
+          [
+            "a[href$=\"research-runner/\"]"
+          ],
+          [
+            "a[href$=\"iocp-server/\"]"
+          ],
+          [
+            "a[href=\"#\"]"
+          ],
+          [
+            "a[rel=\"noopener noreferrer\"][href$=\"dkfhddla\"][target=\"_blank\"]"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "desktop",
+    "route": "/projects/cinevstudio/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[target=\"_self\"]"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 개발 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(2)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(3)"
+          ],
+          [
+            "a[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(5)"
+          ],
+          [
+            ".tag-item.py-1\\.5.px-3:nth-child(6)"
+          ],
+          [
+            ".-translate-x-2 > span[data-astro-cid-feazkes2=\"\"]"
+          ],
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".project-engagement-badge"
+          ],
+          [
+            "li:nth-child(1)"
+          ],
+          [
+            "li:nth-child(2)"
+          ],
+          [
+            "li:nth-child(3)"
+          ],
+          [
+            "li:nth-child(4)"
+          ],
+          [
+            "li:nth-child(5)"
+          ],
+          [
+            "li:nth-child(6)"
+          ],
+          [
+            "li:nth-child(7)"
+          ],
+          [
+            "a[href=\"https://vimeo.com/1177171671\"]"
+          ],
+          [
+            "p:nth-child(4) > a[rel=\"noopener noreferrer\"][target=\"_blank\"]:nth-child(2)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            ".site-info-toggle-text"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "mobile",
+    "route": "/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".pinned-btn > .text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(3) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".px-2\\.5.py-1[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".has-cover.post-card-wrapper.grid-cover-inset:nth-child(2) > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Codex\"]"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Rust\"]"
+          ],
+          [
+            "span[title=\"#Bevy #개발 #AI대필\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Shotloom\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(3)"
+          ],
+          [
+            "span[title=\"#ai대필\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "mobile",
+    "route": "/projects/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "button[data-engagement=\"\"]"
+          ],
+          [
+            "button[data-category=\"\"]"
+          ],
+          [
+            "#featured-projects > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            "li:nth-child(5)"
+          ],
+          [
+            "li:nth-child(6)"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(2) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Yk2ACH2GKaY\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(3) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-cover[aria-label=\"개발 생산성을 위한 워크플로 자동화 상세 보기\"][href$=\"workflow-automation/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"개발 워크플로 자동화\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"자율주행 도구 에셋화 상세 보기\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(5) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(6) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"rrTj0zAE7L0\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"5UnIhwU9jhg\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-cover[aria-label=\"모바일 VR 홈쇼핑 상세 보기\"][href$=\"vr-shopping/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(8) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(9) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Qala_SuONKI\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(10) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(11) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(12) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"bbz7xkBQljI\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"igss9PaePOs\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-category=\"서버 개발\"][data-engagement=\"personal\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "mobile",
+    "route": "/career/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "code"
+          ],
+          [
+            "a[rel=\"noopener noreferrer\"][href$=\"dkfhddla\"][target=\"_blank\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            "a[href$=\"cinevstudio/\"]"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "p:nth-child(4) > a"
+          ],
+          [
+            "a[href$=\"asset-library/\"]"
+          ],
+          [
+            "a[href$=\"vr-shopping/\"]"
+          ],
+          [
+            "a[href$=\"monopic/\"]"
+          ],
+          [
+            "a[href$=\"adas-simulator/\"]"
+          ],
+          [
+            "a[href$=\"cricket-hero/\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "main",
+    "device": "mobile",
+    "route": "/projects/cinevstudio/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".project-engagement-badge"
+          ],
+          [
+            ".project-tags > li:nth-child(1)"
+          ],
+          [
+            ".project-tags > li:nth-child(2)"
+          ],
+          [
+            ".project-tags > li:nth-child(3)"
+          ],
+          [
+            ".project-tags > li:nth-child(4)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href=\"https://vimeo.com/1177171671\"]"
+          ],
+          [
+            "p:nth-child(5) > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+          ],
+          [
+            "section:nth-child(7) > p > code"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(3) > p:nth-child(2) > code:nth-child(1)"
+          ],
+          [
+            "section:nth-child(3) > p:nth-child(2) > code:nth-child(2)"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(1)"
+          ],
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(2)"
+          ],
+          [
+            "p:nth-child(3) > code:nth-child(1)"
+          ],
+          [
+            "p:nth-child(3) > code:nth-child(2)"
+          ],
+          [
+            "section:nth-child(8) > section:nth-child(4) > .horizontal-scroll-container > table > thead > tr > th:nth-child(1)"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "targets": [
+          [
+            "section:nth-child(7) > section:nth-child(4) > .horizontal-scroll-container"
+          ],
+          [
+            "section:nth-child(8) > section:nth-child(4) > .horizontal-scroll-container"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "mobile",
+    "route": "/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".pinned-btn > .text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(3) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".pinned > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".px-2\\.5.py-1[aria-label=\"View all posts with the 생각 tag\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".has-cover.post-card-wrapper.grid-cover-inset:nth-child(2) > .md\\:w-\\[calc\\(100\\%-var\\(--coverWidth\\)-1\\.5rem\\)\\].post-card-content.pl-4 > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(1)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Codex\"]"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Rust\"]"
+          ],
+          [
+            "span[title=\"#Bevy #개발 #AI대필\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(1) > .text-50.text-sm[data-astro-cid-g5no53fi=\"\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-meta-root.gap-x-4.gap-y-2 > .items-center.flex[data-astro-cid-g5no53fi=\"\"]:nth-child(2) > .flex-nowrap.flex-row[data-astro-cid-g5no53fi=\"\"] > .link-lg.text-50.dark\\:hover\\:text-\\(--primary\\)"
+          ],
+          [
+            ".px-2\\.5.py-1[href=\"/archive/?tag=Shotloom\"]"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(2)"
+          ],
+          [
+            ".md\\:w-\\[calc\\(100\\%-52px-12px\\)\\] > .post-card-bottom-tags.mt-auto.pt-3 > .px-2\\.5.py-1.tag-item:nth-child(3)"
+          ],
+          [
+            "span[title=\"#ai대필\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "mobile",
+    "route": "/projects/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "button[data-engagement=\"\"]"
+          ],
+          [
+            "button[data-category=\"\"]"
+          ],
+          [
+            "#featured-projects > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(5)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(1) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(6)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(1)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(2)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(3)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(4)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(5)"
+          ],
+          [
+            ".project-feature-card[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"]:nth-child(2) > .project-feature-body > .project-feature-footer > .project-feature-tags[aria-label=\"주요 기술\"] > li:nth-child(6)"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(2) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 콘텐츠 제작 도구\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"Shotloom Asset Library 상세 보기\"][href$=\"asset-library/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-selected[data-category=\"3D 자산 파이프라인\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(3) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Yk2ACH2GKaY\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-selected[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-section[data-project-section=\"\"]:nth-child(3) > .project-section-heading > div > .project-section-kicker"
+          ],
+          [
+            ".project-cover[aria-label=\"개발 생산성을 위한 워크플로 자동화 상세 보기\"][href$=\"workflow-automation/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-category=\"개발 워크플로 자동화\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-cover[aria-label=\"Unreal 교통 시스템 에셋 상세 보기\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"]:nth-child(2) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR 플랫폼과 시뮬레이터\"][data-engagement=\"company\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(4) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(5) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-category=\"VR·AR 체험 콘텐츠\"][data-engagement=\"company\"]:nth-child(6) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"rrTj0zAE7L0\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"5UnIhwU9jhg\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-cover[aria-label=\"모바일 VR 홈쇼핑 상세 보기\"][href$=\"vr-shopping/\"] > .project-cover-placeholder[aria-hidden=\"true\"] > span"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"VR 플랫폼과 시뮬레이터\"]:nth-child(7) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(8) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(9) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"Qala_SuONKI\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(10) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"freelance\"][data-category=\"게임 프로젝트\"]:nth-child(11) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".project-card-archive[data-engagement=\"personal\"][data-category=\"게임 프로젝트\"]:nth-child(12) > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            "a[href$=\"bbz7xkBQljI\"] > span:nth-child(2)"
+          ],
+          [
+            "a[href$=\"igss9PaePOs\"] > span:nth-child(2)"
+          ],
+          [
+            ".project-card-archive[data-category=\"서버 개발\"][data-engagement=\"personal\"] > .project-card-body > .project-engagement > .project-engagement-badge"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "mobile",
+    "route": "/career/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            "th:nth-child(1)"
+          ],
+          [
+            "th:nth-child(2)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href$=\"cinevstudio/\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            "a[href$=\"asset-library/\"]"
+          ],
+          [
+            "a[href$=\"vr-shopping/\"]"
+          ],
+          [
+            "section:nth-child(5) > ul > li:nth-child(2) > strong > a"
+          ],
+          [
+            "a[href$=\"monopic/\"]"
+          ],
+          [
+            "a[href$=\"adas-simulator/\"]"
+          ],
+          [
+            "a[href$=\"cricket-hero/\"]"
+          ],
+          [
+            "a[href$=\"sideungdo/\"]"
+          ],
+          [
+            "a[href$=\"luxury-residence/\"]"
+          ],
+          [
+            "a[href$=\"diamond-city-ar/\"]"
+          ],
+          [
+            "a[href$=\"night-guard/\"]"
+          ],
+          [
+            "a[href$=\"mist-island/\"]"
+          ],
+          [
+            "a[href$=\"shake-it/\"]"
+          ],
+          [
+            "a[href$=\"lethe/\"]"
+          ],
+          [
+            "a[href$=\"research-runner/\"]"
+          ],
+          [
+            "a[href$=\"iocp-server/\"]"
+          ],
+          [
+            "a[href=\"#\"]"
+          ],
+          [
+            "a[rel=\"noopener noreferrer\"][href$=\"dkfhddla\"][target=\"_blank\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "version": "updated",
+    "device": "mobile",
+    "route": "/projects/cinevstudio/",
+    "overflow": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            "a[data-category-name=\"__archive__\"]"
+          ],
+          [
+            "a[data-category-name=\"소개\"]"
+          ],
+          [
+            "a[data-category-name=\"에세이\"]"
+          ],
+          [
+            "a[data-category-name=\"프로젝트\"]"
+          ],
+          [
+            "a[data-category-name=\"__categories__\"] > span[data-astro-cid-cco35jjw=\"\"]"
+          ],
+          [
+            ".project-engagement-badge"
+          ],
+          [
+            "li:nth-child(1)"
+          ],
+          [
+            "li:nth-child(2)"
+          ],
+          [
+            "li:nth-child(3)"
+          ],
+          [
+            "li:nth-child(4)"
+          ],
+          [
+            "li:nth-child(5)"
+          ],
+          [
+            "li:nth-child(6)"
+          ],
+          [
+            "li:nth-child(7)"
+          ],
+          [
+            "a[href=\"https://vimeo.com/1177171671\"]"
+          ],
+          [
+            "p:nth-child(4) > a[rel=\"noopener noreferrer\"][target=\"_blank\"]:nth-child(2)"
+          ],
+          [
+            "a[href$=\"spice-pro/\"]"
+          ],
+          [
+            "a[href$=\"shotloom/\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(2)"
+          ],
+          [
+            "#copyright-year"
+          ],
+          [
+            "a[href$=\"rss.xml\"]"
+          ],
+          [
+            "a[href=\"/sitemap-index.xml\"]"
+          ],
+          [
+            ".mx-0\\.5.my-2\\.5.gap-x-2:nth-child(3) > span:nth-child(1)"
+          ],
+          [
+            "a[href$=\"astro.build\"]"
+          ],
+          [
+            ".link.text-\\(--primary\\)[target=\"_blank\"]:nth-child(4)"
+          ]
+        ]
+      }
+    ]
+  }
+]

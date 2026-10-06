@@ -34,12 +34,14 @@ function initHorizontalOverflowContainers(): void {
 		if (
 			table.parentElement?.classList.contains("horizontal-scroll-container")
 		) {
+			table.parentElement.tabIndex = 0;
 			table.dataset.horizontalScrollReady = "true";
 			return;
 		}
 
 		const container = document.createElement("div");
 		container.className = "horizontal-scroll-container";
+		container.tabIndex = 0;
 		table.parentNode?.insertBefore(container, table);
 		container.appendChild(table);
 		table.dataset.horizontalScrollReady = "true";

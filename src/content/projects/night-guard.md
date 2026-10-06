@@ -3,7 +3,9 @@ title: "Night Guard: Hospital"
 description: "CCTV로 병실을 감시하는 VR 공포 게임입니다. 사업계획서 경진대회 우수상을 받은 기획을 바탕으로 Unity 팀 개발에서 기획·PM을 맡고, 이후 Unreal Engine으로 프로토타입을 1인 개발했습니다."
 category: "게임 프로젝트"
 engagement: "personal"
-period: "2014 ~ 2015"
+period: "2014–2016 개인·팀 작업 중"
+role: "초기 기획·PM → Unreal 프로토타입 1인 개발"
+delivery: "Unreal 프로토타입 완성"
 order: 20
 image: "/assets/projects/night-guard/cctv.webp"
 tags: ["Unreal Engine","Behavior Tree","NavMesh"]
@@ -14,7 +16,7 @@ link:
     value: "https://youtu.be/igss9PaePOs"
 ---
 
-**기간:** 2014 ~ 2015\
+**기간:** 2014–2016 개인·팀 작업 중, 정확한 개발 기간 미확정\
 **역할:** 초기 Unity 팀의 기획·PM → Unreal Engine 프로토타입 1인 개발\
 **개발 과정:** Unity 팀 개발 → Unreal Engine으로 재구현\
 **구현 기술:** Blueprint, Behavior Tree, NavMesh, Scene Capture, Material Instance

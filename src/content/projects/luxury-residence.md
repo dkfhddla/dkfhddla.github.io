@@ -5,6 +5,8 @@ category: "VR·AR 체험 콘텐츠"
 engagement: "company"
 organization: "보라브이알"
 period: "2017.08 ~ 2017.10"
+role: "클라이언트·씬 구성·VR 장비 연동"
+delivery: "콘텐츠 개발 기록"
 order: 57
 image: "/assets/projects/luxury-residence/showroom.webp"
 tags: ["Unreal Engine", "C++", "VR", "VIVE"]

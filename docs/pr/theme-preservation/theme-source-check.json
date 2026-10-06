@@ -1,0 +1,27 @@
+{
+  "baseCommit": "791175e18959de2b071a3f06bfe7043afe023e9a",
+  "comparison": "main versus final working tree",
+  "changedThemeFiles": [],
+  "sourceChecks": [
+    {
+      "path": "astro.config.mjs",
+      "equalsMain": true
+    },
+    {
+      "path": "src/pages/[...page].astro",
+      "equalsMain": true
+    },
+    {
+      "path": "src/pages/about.astro",
+      "equalsMain": true
+    },
+    {
+      "path": "src/pages/career.astro",
+      "equalsMain": true
+    }
+  ],
+  "removedReplacementLayout": true,
+  "contentDocumentsPreserved": true,
+  "projectPageChanges": "role/delivery summaries and corrected contribution wording only",
+  "tableKeyboardChange": "tabIndex on existing overflow wrapper; no visual style changes"
+}

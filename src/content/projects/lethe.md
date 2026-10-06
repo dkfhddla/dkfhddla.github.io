@@ -4,13 +4,15 @@ description: "C2L의 외주로 프로그래밍을 1인 담당한 모바일 턴�
 category: "게임 프로젝트"
 engagement: "freelance"
 organization: "C2L"
-period: "2015"
+period: "보라VR 입사 이전 · 세부 참여일 미확정"
+role: "턴제·캐릭터·전투 UI 프로그래밍 1인 담당"
+delivery: "외주 프로토타입 개발 기록"
 order: 26
 image: "/assets/projects/lethe/title.webp"
 tags: ["외주 개발", "Unreal Engine", "Blueprint", "턴제 RPG", "게임 AI", "모바일"]
 ---
 
-**기간:** 2015\
+**기간:** 보라VR 입사 이전, 정확한 개발 기간 미확정\
 **형태:** C2L 외주\
 **역할:** 1인 프로그래밍\
 **환경:** Unreal Engine, Blueprint

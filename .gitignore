@@ -47,3 +47,7 @@ package/
 .codex*
 .claude
 .mimocode
+
+# browser verification output
+test-results/
+playwright-report/

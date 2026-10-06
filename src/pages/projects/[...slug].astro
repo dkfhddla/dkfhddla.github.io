@@ -1,10 +1,10 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
+import Markdown from "@/components/common/Markdown.astro";
 import ProjectCover from "@/components/pages/projects/ProjectCover.astro";
+import ProjectEngagement from "@/components/pages/projects/ProjectEngagement.astro";
 import ProjectLinks from "@/components/pages/projects/ProjectLinks.astro";
 import ProjectStatus from "@/components/pages/projects/ProjectStatus.astro";
-import ProjectEngagement from "@/components/pages/projects/ProjectEngagement.astro";
-import Markdown from "@/components/common/Markdown.astro";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
 import { getSortedProjects } from "@/utils/projects-utils";
 import { getFileDirFromPath, url } from "@/utils/url-utils";
@@ -22,8 +22,19 @@ interface Props {
 const { entry } = Astro.props;
 const { engagement, organization } = entry.data;
 const { Content, headings } = await render(entry);
-const { title, description, category, period, image, detailImage, tags, status, link } =
-	entry.data;
+const {
+	title,
+	description,
+	category,
+	period,
+	image,
+	detailImage,
+	tags,
+	status,
+	link,
+	role,
+	delivery,
+} = entry.data;
 const cover = detailImage || image;
 ---
 
@@ -36,6 +47,8 @@ const cover = detailImage || image;
 			<ProjectEngagement engagement={engagement} organization={organization} />
 			{period && <p class="project-period">참여 기간 · {period}</p>}
 			<ProjectStatus status={status} />
+			{role && <p class="project-note"><strong>본인 역할 · </strong>{role}</p>}
+			{delivery && <p class="project-note">{delivery}</p>}
 			<p class="project-intro">{description}</p>
 			{tags.length > 0 && <ul class="project-tags" aria-label="기술 및 주제">{tags.map(tag => <li>{tag}</li>)}</ul>}
 			{link.length > 0 && <div class="project-external-links"><ProjectLinks links={link} /></div>}

@@ -5,6 +5,8 @@ category: "VR·AR 체험 콘텐츠"
 engagement: "company"
 organization: "보라브이알"
 period: "2017.12 ~ 2018.01"
+role: "씬 구성·이동·트레드밀·키오스크 연동"
+delivery: "콘텐츠 개발 기록"
 order: 59
 image: "/assets/projects/sideungdo/vr-experience.webp"
 tags: ["Unreal Engine", "C++", "VR", "트레드밀", "키오스크"]
