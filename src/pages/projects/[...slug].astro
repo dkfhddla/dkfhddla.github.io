@@ -48,7 +48,7 @@ const cover = detailImage || image;
 			{period && <p class="project-period">참여 기간 · {period}</p>}
 			<ProjectStatus status={status} />
 			{role && <p class="project-note"><strong>본인 역할 · </strong>{role}</p>}
-			{delivery && <p class="project-note"><strong>확인된 결과 · </strong>{delivery}</p>}
+			{delivery && <p class="project-note">{delivery}</p>}
 			<p class="project-intro">{description}</p>
 			{tags.length > 0 && <ul class="project-tags" aria-label="기술 및 주제">{tags.map(tag => <li>{tag}</li>)}</ul>}
 			{link.length > 0 && <div class="project-external-links"><ProjectLinks links={link} /></div>}

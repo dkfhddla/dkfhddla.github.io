@@ -30,17 +30,17 @@ CineV Studio의 Pixel Streaming 제공 방식에는 로딩·재접속 대기, UI
 
 ## 클립마다 독립적인 Pose와 IK
 
-**문제:** 캐릭터에 공통으로 남던 수동 자세는 다른 클립을 편집할 때도 영향을 줄 수 있었습니다. 조작 중인 임시 자세를 즉시 저장하면 취소하기도 어려웠습니다.
+**문제:** 포즈 편집 데이터가 캐릭터 단위로 관리되어, 한 클립에서 포즈를 수정하면 같은 캐릭터를 사용하는 다른 클립에도 영향을 줄 수 있었습니다. 클립마다 포즈를 독립적으로 편집할 수 있도록 데이터 관리 구조를 바꿔야 했습니다.
 
-**본인 기여:** 수동 자세를 각 **Performance Clip이 소유**하도록 구성했습니다. 손발의 위치·방향을 조절하는 IK와 Gizmo를 연결하고, 편집 중 Draft와 확정된 상태를 나눠 적용·취소·Undo/Redo로 이어지게 했습니다.
+**본인 기여:** 직접 편집한 포즈를 각 **Performance Clip이 소유**하도록 구성했습니다. 손발의 위치·방향을 조절하는 IK와 Gizmo를 연결하고, 편집 중 Draft와 확정된 상태를 나눠 적용·취소·Undo/Redo로 이어지게 했습니다.
 
-**확인된 결과:** 같은 원본 자세를 공유하는 인접 클립도 독립적으로 편집하도록 만들었습니다. 상태 직렬화·엔진 평가, 다시 열기·미리보기·PNG 출력이 같은 규칙을 사용하는지 자동 테스트와 직접 조작으로 검증했습니다.
+**확인된 결과:** 같은 원본 포즈를 공유하는 인접 클립도 독립적으로 편집하도록 만들었습니다. 상태 직렬화·엔진 평가, 다시 열기·미리보기·PNG 출력이 같은 규칙을 사용하는지 자동 테스트와 직접 조작으로 검증했습니다.
 
 ## 원본 모션 시간과 타임라인 시간 분리
 
 **문제:** Trim·Slip·재생 속도를 바꾸면 화면에 보이는 시간과 원본 모션의 시점이 달라집니다. Pose Key가 잘못된 시간 기준에 묶이면 편집 뒤 다른 동작 시점을 수정하게 됩니다.
 
-**본인 기여와 결과:** 원본 모션 시간과 타임라인 시간을 분리하고, 키가 같은 원본 모션 시점을 따라가도록 저장·평가 규칙을 맞췄습니다. 구간 변경, 분수 재생 속도와 Undo/Redo·저장 변환을 회귀 테스트로 다뤘습니다. AI와 진행한 구현·검토 경험이며 모든 코드를 수작업으로 작성한 것으로 설명하지 않습니다.
+**본인 기여와 결과:** 원본 모션 시간과 타임라인 시간을 분리하고, 키가 같은 원본 모션 시점을 따라가도록 저장·평가 규칙을 맞췄습니다. 구간 변경, 분수 재생 속도와 Undo/Redo·저장 변환을 회귀 테스트로 다뤘습니다. AI를 활용해 구현하고, 시간 변환과 저장·평가 규칙이 의도대로 동작하는지 검토·검증했습니다.
 
 ## 에셋 가져오기와 작업물·출력
 
@@ -73,3 +73,9 @@ Ouroboros MCP의 인터뷰로 빠진 요구사항과 구현 방향을 정리했�
 </video>
 
 [전체 기능 테스트 · YouTube](https://youtu.be/OeyOMw4zknI) · [개발 과정 기록](/posts/shotloom-project-history/) · [AI 개발에 대한 회고](/posts/am-i-a-codex-launcher/)
+
+아래는 편집 후 결과를 테스트하는 과정을 담은 영상입니다.
+
+<iframe src="https://www.youtube-nocookie.com/embed/SpdDFK4Z1mU" title="Shotloom Editing demo" width="960" height="540" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9;border:0;"></iframe>
+
+[편집 결과 테스트 영상 · YouTube](https://www.youtube.com/watch?v=SpdDFK4Z1mU)

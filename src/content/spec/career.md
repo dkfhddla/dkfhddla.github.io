@@ -22,13 +22,13 @@
 3D 영상 제작 도구의 초기 런타임 기능부터 편집 시스템과 웹·Rust 기반 후속 도구까지 참여했습니다.
 
 - **[SpicePro](/projects/spice-pro/):** 런타임 Timeline·Action, 캐릭터 커스터마이징 UI와 ViewModel, Map Editor를 구현했습니다. Action 정보를 실제 장면에서 입력하는 툴과 DataTable 기반 UI 자동 생성을 개발했습니다.
-- **[CineV Studio](/projects/cinevstudio/):** Timeline·Shot·Camera와 캐릭터 상호작용, UI 구조, 저장·복구와 CLI 출력을 담당했습니다. Shot 리플 편집과 MetaAction·UnitAction은 동료와 공동 개발했고, UI·상태 책임은 구현과 코드리뷰로 개선했습니다. 정확한 전체 참여 기간은 확정하지 않았습니다.
+- **[CineV Studio](/projects/cinevstudio/):** Timeline·Shot·Camera와 캐릭터 상호작용, UI 구조, 저장·복구와 CLI 출력을 담당했습니다. Shot 리플 편집과 MetaAction·UnitAction은 동료와 공동 개발했고, UI·상태 책임은 구현과 코드리뷰로 개선했습니다.
 - **[Shotloom](/projects/shotloom/):** React·TypeScript UI와 Rust·Bevy 엔진을 연결해 뷰포트·카메라·타임라인·Pose·IK 편집을 개발했습니다. 클립의 상태 소유권과 저장·Undo·출력의 일관성을 검토하고 검증했습니다.
 - **[Shotloom Asset Library](/projects/asset-library/):** 자산 공급 프로젝트의 초기 구축과 API 런타임, 검증된 파일 묶음의 게시·제공을 담당했습니다. 팀에서 정의한 계약과 편집기 소비 경로를 맞췄습니다.
 
 2026년 1–2월 UI/UX TF에서는 **개발자 2명(본인 포함), 기획자 1명, UI 디자이너 1명**의 작업을 조율했습니다. 우선순위·담당 범위·작업 의존성, 디자인 검토와 공유를 맡았습니다.
 
-Shotloom 참여는 2026년 4월부터 시작했고, 퇴사 후 9월 둘째 주까지 구현 마무리에 추가 참여했습니다. 이 기간은 시나몬 재직 기간에 합산하지 않습니다. Asset Library는 2026.05.28–08.25의 참여 기록이며 인수인계 문서 작성을 포함합니다.
+Shotloom 참여는 2026년 4월부터 시작했고, 퇴사 후 9월 둘째 주까지 구현 마무리에 추가 참여했습니다.
 
 <span id="soulx"></span>
 

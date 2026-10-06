@@ -4,7 +4,7 @@ description: "Unreal 기반 3D 시네마틱 제작 도구. 샷 경계의 시간�
 category: "3D 콘텐츠 제작 도구"
 engagement: "company"
 organization: "시나몬"
-period: "시나몬 재직 중 · 전체 참여일 미확정"
+period: "시나몬 재직 기간 내 참여 · 2026.08 퇴사"
 role: "Timeline·Shot·Camera, Action·UI·저장·출력 개발"
 delivery: "출시·실제 고객 이용 (팀 제품)"
 order: 130
