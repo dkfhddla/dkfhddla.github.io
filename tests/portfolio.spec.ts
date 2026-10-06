@@ -45,6 +45,10 @@ test("home, career and project archive are readable and accessible", async ({
 		).toBe(true);
 		const result = await new AxeBuilder({ page })
 			.withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+			// YouTube controls its player internals; keep site content in scope.
+			.exclude(
+				'iframe[src="https://www.youtube-nocookie.com/embed/SpdDFK4Z1mU"]',
+			)
 			.analyze();
 		// Keep the original theme; record its existing contrast findings separately.
 		await info.attach(`accessibility-${route.replaceAll("/", "_")}`, {
