@@ -8,11 +8,16 @@ period: "시나몬 재직 기간 내 참여 · 2026.08 퇴사"
 role: "Timeline·Shot·Camera, Action·UI 구조, 모델 연동·저장·CLI 출력"
 delivery: "출시·실제 고객 이용 (팀 제품)"
 order: 130
+link:
+  - label: "공식 제품 아카이브"
+    value: "https://cinev.com/archive/#archive-studio"
 image: "/assets/projects/cinevstudio/action-timeline.webp"
 tags: ["Unreal Engine", "C++", "UMG", "Blueprint", "Pixel Streaming", "Timeline", "Camera", "NNE"]
 ---
 
 ## 프로젝트 맥락과 역할
+
+CineV 서비스 종료 후 공개된 [공식 아카이브](https://cinev.com/archive/#archive-studio)에서 제품 소개와 시연 자료를 확인할 수 있습니다. 아카이브는 시나몬 팀의 제품·연구 기록이며, 이 페이지는 그중 제가 맡은 개발과 문제 해결 경험을 정리한 기록입니다.
 
 CineV Studio는 캐릭터와 소품을 배치하고 동작·카메라·조명을 편집해 영상으로 출력하는 제작 도구입니다. SpicePro의 폭넓은 기능을 씬·컷별 월드 설정과 타임라인에 집중하도록 개편한 제품으로, Unreal 프로그램을 Pixel Streaming으로 웹에 제공했습니다.
 
@@ -155,7 +160,7 @@ MP4 내보내기 옵션과 렌더링 처리도 담당했습니다. `-RenderVideo
 
 SidePanel 웹 프로토타입을 제작·공유하고 공동 테스트의 대상·시점과 확인 범위를 조율했습니다. 콘텐츠 담당자의 피드백에서 우클릭 카메라 편집·교체 메뉴를 발견하기 어렵다는 점을 확인하고, 프로토타입에서 검토할 수 있는 부분과 엔진 연동이 필요한 부분을 나눠 논의했습니다. 테스트 환경의 호스팅·Dockerfile·CI/CD는 엔지니어링팀이 담당했습니다.
 
-## 실제 제품 영상과 이어지는 작업
+## 공식 제품 기록과 시연 영상
 
 아래는 CINEV 공식 **3D Edit Deep Dive**입니다. 캐릭터 배치부터 동작·카메라 편집까지 제품 전체 흐름을 보여 줍니다.
 

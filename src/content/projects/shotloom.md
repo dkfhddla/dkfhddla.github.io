@@ -8,11 +8,16 @@ period: "2026.04–2026.09 둘째 주"
 role: "Viewport·Camera·Timeline·Pose·IK, UI·엔진 연동"
 delivery: "사내 테스트·테스트 빌드"
 order: 120
+link:
+  - label: "공식 Shotloom 개발 기록"
+    value: "https://cinev.com/shotloom/"
 image: "/assets/projects/shotloom/scene-editor.webp"
 tags: ["React", "TypeScript", "Rust", "Bevy", "Timeline", "Camera", "IK", "Codex", "MCP"]
 ---
 
 ## 프로젝트 맥락과 역할
+
+CineV 서비스 종료 후 공개된 [공식 Shotloom 아카이브](https://cinev.com/shotloom/)에서 팀의 제품 소개와 편집 흐름을 확인할 수 있습니다. 공식 기록은 팀 제품의 맥락을 보여주며, 아래에는 제가 담당한 편집기 개발 범위와 직접 확인한 결과를 구분해 정리했습니다.
 
 CineV Studio의 Pixel Streaming 제공 방식에는 로딩·재접속 대기, UI 지연과 서버 비용 부담이 있었습니다. Shotloom은 Unreal 기반 실행을 브라우저 안에서 동작하는 Bevy 엔진과 React UI로 전환하는 방향으로 시작했습니다.
 
